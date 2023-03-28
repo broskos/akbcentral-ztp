@@ -1,0 +1,28 @@
+#ConfgMap to setup storage and retention parameters for user workload monitoring.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-workload-monitoring-config
+  namespace: openshift-user-workload-monitoring
+  annotations:
+    ran.openshift.io/ztp-deploy-wave: "2"
+data:
+  config.yaml: |
+    prometheus:
+      retention: 1d
+      volumeClaimTemplate:
+        spec:
+          storageClassName: ocs-storagecluster-ceph-rbd
+          resources:
+            requests:
+              storage: 20Gi
+      enforcedSampleLimit: 50000
+    thanosRuler:
+      retention: 1d
+      volumeClaimTemplate:
+        spec:
+          storageClassName: ocs-storagecluster-ceph-rbd
+          resources:
+            requests:
+              storage: 20Gi
+

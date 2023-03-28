@@ -1,0 +1,42 @@
+---
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: osp-director-operator-index-0
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-openstack-heat-engine
+    source: registry.redhat.io/rhosp-rhel8/openstack-heat-engine
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-openstack-mariadb
+    source: registry.redhat.io/rhosp-rhel8/openstack-mariadb
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhel8-httpd-24
+    source: registry.redhat.io/rhel8/httpd-24
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-openstack-tripleoclient
+    source: registry.redhat.io/rhosp-rhel8/openstack-tripleoclient
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-openstack-heat-api
+    source: registry.redhat.io/rhosp-rhel8/openstack-heat-api
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/openstack-k8s-operators-osp-director-operator
+    source: quay.io/openstack-k8s-operators/osp-director-operator
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-openstack-rabbitmq
+    source: registry.redhat.io/rhosp-rhel8/openstack-rabbitmq
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-tech-preview-osp-director-downloader
+    source: registry.redhat.io/rhosp-rhel8-tech-preview/osp-director-downloader
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/openstack-k8s-operators-osp-director-operator-bundle
+    source: quay.io/openstack-k8s-operators/osp-director-operator-bundle
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/kubebuilder-kube-rbac-proxy
+    source: gcr.io/kubebuilder/kube-rbac-proxy
+  - mirrors:
+    - quay.apps.mano-npss.jnpr.bos2.lab/ospd/rhosp-rhel8-tech-preview-osp-director-provisioner
+    source: registry.redhat.io/rhosp-rhel8-tech-preview/osp-director-provisioner

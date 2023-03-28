@@ -1,0 +1,14 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfigPool
+metadata:
+  name: profile2
+  labels:
+    machineconfiguration.openshift.io/role: profile2
+spec:
+  machineConfigSelector:
+    matchExpressions:
+      - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker, profile2]}
+  nodeSelector:
+    matchLabels:
+      node-role.kubernetes.io/profile2: ""
+  pause: false

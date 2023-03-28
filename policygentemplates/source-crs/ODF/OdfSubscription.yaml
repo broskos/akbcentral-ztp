@@ -1,0 +1,15 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: odf-operator
+  namespace: openshift-storage
+  annotations:
+    ran.openshift.io/ztp-deploy-wave: "7"
+spec:
+  channel: "stable-4.10"
+  installPlanApproval: Manual
+  name: odf-operator
+  source: redhat-operators  
+  sourceNamespace: openshift-marketplace
+

@@ -1,0 +1,8 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: redhat-operator-index
+  namespace: openshift-marketplace
+spec:
+  image: quay.apps.mano-npss.jnpr.bos2.lab/olmidx/olmidx-redhat-operator-index:v4.10
+  sourceType: grpc

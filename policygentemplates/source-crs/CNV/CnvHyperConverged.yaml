@@ -1,0 +1,10 @@
+apiVersion: hco.kubevirt.io/v1beta1
+kind: HyperConverged
+metadata:
+  name: kubevirt-hyperconverged
+  namespace: openshift-cnv
+  annotations:
+    ran.openshift.io/ztp-deploy-wave: "2"
+spec: {}
+
+

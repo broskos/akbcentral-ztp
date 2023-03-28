@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: istio-system
+  annotations:
+    ran.openshift.io/ztp-deploy-wave: "15"
+  labels:
+    openshift.io/cluster-monitoring: "true"
+---
+

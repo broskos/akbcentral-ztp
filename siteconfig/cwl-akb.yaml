@@ -1,0 +1,551 @@
+apiVersion: ran.openshift.io/v1
+kind: SiteConfig
+metadata:
+  name: "cwl-akb"
+  namespace: "cwl-akb"
+spec:
+  baseDomain: "jnpr.bos2.lab"
+  pullSecretRef:
+    name: "assisted-deployment-pull-secret"
+  clusterImageSetNameRef: "openshift-v4.10.36-mirror"
+  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOtEcFt5sUdExEARrFADxsj0ej9V/9keV5+4aSbC0r2BCHRIqrWUtMKkuUtPEg5kB0wzSX4oU0MSFsmitsuk66+1uc9Aj/Zg8aGzQwJG+VeOcVu5MShNCkGueYGLJsdVdIsqa2g0TUx118+Xi85zkooTfQeqdwk4MLkIbzCLZDF4UMQJgov0Zqs88QcNUpvG1qsnRgpuU+rPEYSbg2u+u1n01HnqGpJdu7e0X9+rlOyVOMVH9pWLL3CyVgVIMr90nNqgrHxB7fvBdk7Neyr+KItgcv87Cr5iQqjwMDxj+tTNPF25bQVznSAad53v77uH6HzubncWIo76+kGjToBzAKCf2lLebqmF1iDUrpNVQwpRsVwe7Jz1Y6W08ThoHCjlZ0FYvrelM4eYn6qsrTgeZMaFayuryuF4lgQ7ZBipZkVHKKJkrlVxx+YCzAWLTnlZdiHG8rRykKOLb1Ofaxu+3R3OKiF2AueMn66qKUe5X/rVqXoEr2YJFMyx0RLgHMJas= mano@bastion"
+  clusters:
+  - clusterName: "cwl-akb"
+    networkType: "OVNKubernetes"
+    extraManifestPath: extra-manifest  # SH: this could be any directory name, but has to match whats created in the folder
+    extraManifests:
+      filter:
+        inclusionDefault: exclude
+        include:
+          - CS.yaml
+          - ICSP.yaml
+          - ospdo-icsp.yaml
+          - mcp-profile1.yaml
+          - mcp-profile2.yaml
+    clusterLabels:
+      # These example cluster labels correspond to the bindingRules in the PolicyGenTemplate examples in ../policygentemplates:
+      core: true
+      cluster: cwl-akb
+    clusterNetwork:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+      #- cidr: 1001:1::/48
+        #hostPrefix: 64
+    # For 3-node and standard clusters with static IPs, the API and Ingress IPs must be configured here
+    apiVIP: 192.168.13.45
+    ingressVIP: 192.168.13.44
+    # apiVIP: 1111:2222:3333:4444::1:1
+    # ingressVIP: 1111:2222:3333:4444::1:2
+    serviceNetwork:
+      - 172.30.0.0/16
+      # - 1001:2::/112
+    additionalNTPSources:
+      - 192.168.12.49
+      # - 1111:2222:3333:4444::2
+    # Optionally; This can be used to override the KlusterletAddonConfig that is created for this cluster:
+    #crTemplates:
+    #  KlusterletAddonConfig: "KlusterletAddonConfigOverride.yaml"
+    # Optionally; This can be used to to configure desired BIOS setting on all nodes in this cluster:
+    #biosConfigRef:
+    #  filePath: "example-hw.profile"
+################################################################
+    nodes:
+      - hostName: "master1.cwl-akb.jnpr.bos2.lab"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia+https://192.168.12.166/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName:
+          name: "bmh-secret-1"
+        bootMACAddress: "B4:96:91:B6:29:7C"
+        # Use UEFISecureBoot to enable secure boot for this node
+        # bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/sda"
+# As per: https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-talm-for-cluster-upgrades.html#cnf-about-topology-aware-lifecycle-manager-config_cnf-topology-aware-lifecycle-manager
+        diskPartition:
+          - device: /dev/sda
+            partitions:
+            - mount_point: /var/recovery
+              size: 51200
+              start: 800000
+        nodeNetwork:
+          interfaces:
+            - name: "ens4f0"
+              macAddress: "B4:96:91:B6:29:7C"
+            - name: "ens4f1"
+              macAddress: "B4:96:91:B6:29:7D"
+            - name: "eno8303"
+              macAddress: "70:B5:E8:F0:2C:4A"
+            - name: "eno8403"
+              macAddress: "70:B5:E8:F0:2C:4B"
+            - name: "eno12399"
+              macAddress: "B4:96:91:BA:AD:64"
+            - name: "eno12409"
+              macAddress: "B4:96:91:BA:AD:65"
+            - name: "ens5f0"
+              macAddress: "B4:96:91:B6:29:A4"
+            - name: "ens5f1"
+              macAddress: "B4:96:91:B6:29:A5"
+            - name: "ens6f0"
+              macAddress: "B8:CE:F6:10:BA:04"
+            - name: "ens6f1"
+              macAddress: "B8:CE:F6:10:BA:05"
+            - name: "ens7f0"
+              macAddress: "B4:96:91:B6:29:56"
+            - name: "ens7f1"
+              macAddress: "B4:96:91:B6:29:57"
+          config:
+            interfaces:
+              - name: bond0
+                description: Bond
+                type: bond
+                state: up
+                ipv4:
+                  address:
+                  - ip: 192.168.13.46
+                    prefix-length: 25
+                  enabled: true
+                link-aggregation:
+                  mode: '802.3ad'
+                  options:
+                    miimon: '1000'
+                  slaves:
+                    - ens4f0
+                    - ens4f1
+              - name: bond1
+                description: Bond
+                type: bond
+                state: up
+                ipv4:
+                  enabled: true
+                link-aggregation:
+                  mode: '802.3ad'
+                  options:
+                    miimon: '1000'
+                  slaves:
+                    - ens5f0
+                    - ens5f1
+              - name: ens4f0
+                state: up
+                mtu: 9216
+                type: ethernet
+                ipv4:
+                  enabled: false
+              - name: ens4f1
+                state: up
+                mtu: 9216
+                type: ethernet
+                ipv4:
+                  enabled: false
+              - name: eno8303
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno8404
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno12399
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno12409
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens5f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens5f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens6f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens6f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens7f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens7f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                server:
+                  - 192.168.12.49
+            routes:
+              config:
+                - destination: 0.0.0.0/0
+                  next-hop-address: 192.168.13.1
+                  next-hop-interface: bond0
+############################################################
+      - hostName: "master2.cwl-akb.jnpr.bos2.lab"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia+https://192.168.12.164/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName:
+          name: "bmh-secret-2"
+        bootMACAddress: "B4:96:91:BA:EC:F8"
+        # Use UEFISecureBoot to enable secure boot for this node
+        # bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/sda"
+        diskPartition:
+          - device: /dev/sda
+            partitions:
+            - mount_point: /var/recovery
+              size: 51200
+              start: 800000
+        nodeNetwork:
+          interfaces:
+            - name: "ens4f0"
+              macAddress: "B4:96:91:BA:EC:F8"
+            - name: "ens4f1"
+              macAddress: "B4:96:91:BA:EC:F9"
+            - name: "eno8303"
+              macAddress: "70:B5:E8:F0:25:F8"
+            - name: "eno8403"
+              macAddress: "70:B5:E8:F0:25:F9"
+            - name: "eno12399"
+              macAddress: "B4:96:91:BA:1A:B6"
+            - name: "eno12409"
+              macAddress: "B4:96:91:BA:1A:B7"
+            - name: "ens5f0"
+              macAddress: "B4:96:91:B6:2B:E4"
+            - name: "ens5f1"
+              macAddress: "B4:96:91:B6:2B:E5"
+            - name: "ens6f0"
+              macAddress: "B8:CE:F6:10:B5:C8"
+            - name: "ens6f1"
+              macAddress: "B8:CE:F6:10:B5:C9"
+            - name: "ens7f0"
+              macAddress: "B4:96:91:B6:2C:06"
+            - name: "ens7f1"
+              macAddress: "B4:96:91:B6:2C:07"
+          config:
+            interfaces:
+              - name: bond0
+                description: Bond
+                type: bond
+                state: up
+                ipv4:
+                  address:
+                  - ip: 192.168.13.47
+                    prefix-length: 25
+                  enabled: true
+                link-aggregation:
+                  mode: '802.3ad'
+                  options:
+                    miimon: '1000'
+                  slaves:
+                    - ens4f0
+                    - ens4f1
+              - name: bond1
+                description: Bond
+                type: bond
+                state: up
+                ipv4:
+                  enabled: true
+                link-aggregation:
+                  mode: '802.3ad'
+                  options:
+                    miimon: '1000'
+                  slaves:
+                    - ens5f0
+                    - ens5f1
+              - name: ens4f0
+                state: up
+                mtu: 9216
+                type: ethernet
+                ipv4:
+                  enabled: false
+              - name: ens4f1
+                state: up
+                mtu: 9216
+                type: ethernet
+                ipv4:
+                  enabled: false
+              - name: eno8303
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno8404
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno12399
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno12409
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens5f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens5f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens6f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens6f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens7f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens7f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                server:
+                  - 192.168.12.49
+            routes:
+              config:
+                - destination: 0.0.0.0/0
+                  next-hop-address: 192.168.13.1
+                  next-hop-interface: bond0
+############################################################
+      - hostName: "master3.cwl-akb.jnpr.bos2.lab"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia+https://192.168.12.148/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName:
+          name: "bmh-secret-3"
+        bootMACAddress: "B4:96:91:B6:29:6C"
+        # Use UEFISecureBoot to enable secure boot for this node
+        # bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/sda"
+        diskPartition:
+          - device: /dev/sda
+            partitions:
+            - mount_point: /var/recovery
+              size: 51200
+              start: 800000
+        nodeNetwork:
+          interfaces:
+            - name: "ens4f0"
+              macAddress: "B4:96:91:B6:29:6C"
+            - name: "ens4f1"
+              macAddress: "B4:96:91:B6:29:6D"
+            - name: "eno8303"
+              macAddress: "70:B5:E8:F0:32:AE"
+            - name: "eno8403"
+              macAddress: "70:B5:E8:F0:32:AF"
+            - name: "eno12399"
+              macAddress: "B4:96:91:BA:1C:F2"
+            - name: "eno12409"
+              macAddress: "B4:96:91:BA:1C:F3"
+            - name: "ens5f0"
+              macAddress: "B4:96:91:B6:2B:12"
+            - name: "ens5f1"
+              macAddress: "B4:96:91:B6:2B:13"
+            - name: "ens6f0"
+              macAddress: "B8:CE:F6:10:B2:54"
+            - name: "ens6f1"
+              macAddress: "B8:CE:F6:10:B2:55"
+            - name: "ens7f0"
+              macAddress: "B4:96:91:B6:29:A0"
+            - name: "ens7f1"
+              macAddress: "B4:96:91:B6:29:A1"
+          config:
+            interfaces:
+              - name: bond0
+                description: Bond
+                type: bond
+                state: up
+                ipv4:
+                  address:
+                  - ip: 192.168.13.48
+                    prefix-length: 25
+                  enabled: true
+                link-aggregation:
+                  mode: '802.3ad'
+                  options:
+                    miimon: '1000'
+                  slaves:
+                    - ens4f0
+                    - ens4f1
+              - name: bond1
+                description: Bond
+                type: bond
+                state: up
+                ipv4:
+                  enabled: true
+                link-aggregation:
+                  mode: '802.3ad'
+                  options:
+                    miimon: '1000'
+                  slaves:
+                    - ens5f0
+                    - ens5f1
+              - name: ens4f0
+                state: up
+                mtu: 9216
+                type: ethernet
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens4f1
+                state: up
+                mtu: 9216
+                type: ethernet
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno8303
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno8404
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno12399
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: eno12409
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens5f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens5f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens6f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens6f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens7f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+              - name: ens7f1
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: false
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                server:
+                  - 192.168.12.49
+            routes:
+              config:
+                - destination: 0.0.0.0/0
+                  next-hop-address: 192.168.13.1
+                  next-hop-interface: bond0

@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: osp-director-operator-index
+  namespace: openstack
+  annotations:
+    ran.openshift.io/ztp-deploy-wave: "2"
+spec:
+  sourceType: grpc
+  image: quay.apps.mano-npss.jnpr.bos2.lab/ospd/ospd-osp-director-operator-index:1.2.3
+
