@@ -1,8 +1,8 @@
 apiVersion: ran.openshift.io/v1
 kind: SiteConfig
 metadata:
-  name: "cwl-m2l"
-  namespace: "cwl-m2l"
+  name: "m2lcwl"
+  namespace: "m2lcwl"
 spec:
   baseDomain: "etisalat-nfvi.local"
   pullSecretRef:
@@ -10,7 +10,7 @@ spec:
   clusterImageSetNameRef: "openshift-v4.10.43-quay"
   sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDI7GLDAwIXTlutd8qzixKN1uIjUAWwX09Frv90GN5kYdjbKAVj/RmYIxAZam4uldUSql2GMMzDzH/imBdtK7SAe8/hwcHwA7l5re1Z/VBseILR7XKpzkz20/dpCEyhbn5/QVQqix/3YYxRPFmzuSlvpzDb/sz2+ju1t70XmyT2j4KGw5LAAB0litLKYCEOBpj3NtuHqNDMKq7057ddO7kJbgsNx8JlbZWMRURYVUqCpoDCw40ByxJlvKKEEBxTYquntiIwI1PrNHYhg0reCvpmZtsdsogv/3P8eOAqCECSjRMTMibNpH5dHZkKEt/NcGtcZln5CpeMXq/pRKdOReF5UaZAc3ogo7hcZxBny8/+pStVf5JRwRot+4sCJyMh/6Sa/GaRIoX4NCUmtHnAnr90PKr/sWo2yF+BTqLAHHSud7o7+5ZHDz3EDr01hkcjf6gbzE2mAQAEbVMRrVcZPlENwQctsIP/Qztjcud1MmjNNw1L6I71RhPI4f78BNCZQj8= rhadmin@bm-auh-m2l00-nec-nfvi3-cmn-nec-dbastion.etisalat-nfvi.local"
   clusters:
-  - clusterName: "cwl-m2l"
+  - clusterName: "m2lcwl"
     networkType: "OVNKubernetes"
     extraManifestPath: extra-manifest
     extraManifests:
@@ -19,12 +19,11 @@ spec:
         include:
           - CS.yaml
           - ICSP.yaml
-          - ospdo-icsp.yaml
           - mcp-profile1.yaml
           - mcp-profile2.yaml
     clusterLabels:
       core: true
-      cluster: cwl-m2l
+      cluster: m2lcwl
     clusterNetwork:
       - cidr: 10.128.0.0/14
         hostPrefix: 23
@@ -49,14 +48,15 @@ spec:
     #  filePath: "example-hw.profile"
 ################################################################
     nodes:
-      - hostName: "docmas01.cwl-m2l.etisalat-nfvi.local"
+      - hostName: "docmas01.m2lcwl.etisalat-nfvi.local"
         role: "master"
-        bmcAddress: "redfish-virtualmedia+https://10.179.229.18/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "redfish-virtualmedia+https://10.179.229.18/redfish/v1/Systems/WZP242312X4"
         bmcCredentialsName:
           name: "bmh-docmas01-secret"
         bootMACAddress: "B4:96:91:B6:2B:C4"
+        ironicInspect: enabled
         # Use UEFISecureBoot to enable secure boot for this node
-        # bootMode: "UEFI"
+        bootMode: "legacy"
         rootDeviceHints:
           deviceName: "/dev/sda"
 # As per: https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-talm-for-cluster-upgrades.html#cnf-about-topology-aware-lifecycle-manager-config_cnf-topology-aware-lifecycle-manager
@@ -113,7 +113,7 @@ spec:
                   enabled: true
                   address:
                   - ip: 10.179.233.68
-                    prefix-length: 23                
+                    prefix-length: 23
               - name: bond1
                 description: Bond
                 type: bond
@@ -143,13 +143,13 @@ spec:
                 state: up
                 type: vlan
                 vlan:
-                  base-iface: bond0
+                  base-iface: bond1
                   id: 3504
                 ipv4:
                   enabled: true
                   address:
                   - ip: 172.16.79.4
-                    prefix-length: 22                  
+                    prefix-length: 22
             dns-resolver:
               config:
                 server:
@@ -161,14 +161,15 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0
 ############################################################
-      - hostName: "docmas02.cwl-m2l.etisalat-nfvi.local"
+      - hostName: "docmas02.m2lcwl.etisalat-nfvi.local"
         role: "master"
-        bmcAddress: "redfish-virtualmedia+https://10.179.229.19/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "redfish-virtualmedia+https://10.179.229.19/redfish/v1/Systems/WZP2423131V"
         bmcCredentialsName:
-          name: " bmh-docmas02-secret"
+          name: "bmh-docmas02-secret"
         bootMACAddress: "40:a6:b7:21:ff:1c"
+        ironicInspect: enabled
         # Use UEFISecureBoot to enable secure boot for this node
-        # bootMode: "UEFI"
+        bootMode: "legacy"
         rootDeviceHints:
           deviceName: "/dev/sda"
         nodeNetwork:
@@ -248,7 +249,7 @@ spec:
                 state: up
                 type: vlan
                 vlan:
-                  base-iface: bond0
+                  base-iface: bond1
                   id: 3504
                 ipv4:
                   enabled: true
@@ -266,14 +267,15 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0
 ############################################################
-      - hostName: "docmas03.cwl-m2l.etisalat-nfvi.local"
+      - hostName: "docmas03.m2lcwl.etisalat-nfvi.local"
         role: "master"
-        bmcAddress: "redfish-virtualmedia+https://10.179.229.20/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "redfish-virtualmedia+https://10.179.229.20/redfish/v1/Systems/WZP242312Z0"
         bmcCredentialsName:
           name: "bmh-docmas03-secret"
         bootMACAddress: "40:a6:b7:21:31:80"
-        # Use UEFISecureBoot to enable secure boot for this node
-        # bootMode: "UEFI"
+        ironicInspect: enabled
+      # Use UEFISecureBoot to enable secure boot for this node
+        bootMode: "legacy"
         rootDeviceHints:
           deviceName: "/dev/sdb"
         nodeNetwork:
@@ -353,7 +355,7 @@ spec:
                 state: up
                 type: vlan
                 vlan:
-                  base-iface: bond0
+                  base-iface: bond1
                   id: 3504
                 ipv4:
                   enabled: true
@@ -371,8 +373,334 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0
 
+## Cisco masters
+#      - hostName: "docmas01.m2lcwl.etisalat-nfvi.local"
+#        role: "master"
+#        bmcAddress: "redfish-virtualmedia+https://10.179.229.18/redfish/v1/Systems/WZP242312X4"
+#        bmcCredentialsName:
+#          name: "bmh-docmas01-secret"
+#        bootMACAddress: "B4:96:91:B6:2B:C4"
+#        ironicInspect: enabled
+#        # Use UEFISecureBoot to enable secure boot for this node
+#        bootMode: "legacy"
+#        rootDeviceHints:
+#          deviceName: "/dev/sda"
+## As per: https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-talm-for-cluster-upgrades.html#cnf-about-topology-aware-lifecycle-manager-config_cnf-topology-aware-lifecycle-manager
+#        diskPartition:
+#          - device: /dev/sda
+#            partitions:
+#            - mount_point: /var/recovery
+#              size: 51200
+#              start: 800000
+#        nodeNetwork:
+#          interfaces:
+#            - name: "ens2f0"
+#              macAddress: "40:a6:b7:22:08:64"
+#            - name: "ens2f1"
+#              macAddress: "40:a6:b7:22:08:65"
+#            - name: "ens4f0"
+#              macAddress: "40:a6:b7:22:08:74"
+#            - name: "ens4f1"
+#              macAddress: "40:a6:b7:22:08:75"
+#          config:
+#            interfaces:
+#              - name: bond0
+#                description: Bond
+#                type: bond
+#                state: up
+#                ipv4:
+#                  enabled: false
+#                link-aggregation:
+#                  mode: '802.3ad'
+#                  options:
+#                    miimon: '100'
+#                  slaves:
+#                    - ens2f0
+#                    - ens4f1
+#              - name: ens2f0
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: ens4f1
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: bond0.3103
+#                state: up
+#                type: vlan
+#                vlan:
+#                  base-iface: bond0
+#                  id: 3103
+#                ipv4:
+#                  enabled: true
+#                  address:
+#                  - ip: 10.179.233.68
+#                    prefix-length: 23
+#              - name: bond1
+#                description: Bond
+#                type: bond
+#                state: up
+#                ipv4:
+#                  enabled: false
+#                link-aggregation:
+#                  mode: '802.3ad'
+#                  options:
+#                    miimon: '100'
+#                  slaves:
+#                    - ens2f1
+#                    - ens4f0
+#              - name: ens2f1
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: ens4f0
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: bond1.3504
+#                state: up
+#                type: vlan
+#                vlan:
+#                  base-iface: bond0
+#                  id: 3504
+#                ipv4:
+#                  enabled: true
+#                  address:
+#                  - ip: 172.16.79.4
+#                    prefix-length: 22
+#            dns-resolver:
+#              config:
+#                server:
+#                  - 10.179.232.138
+#                  - 10.179.232.139
+#            routes:
+#              config:
+#                - destination: 0.0.0.0/0
+#                  next-hop-address: 10.179.233.254
+#                  next-hop-interface: bond0
+#############################################################
+#      - hostName: "docmas02.m2lcwl.etisalat-nfvi.local"
+#        role: "master"
+#        bmcAddress: "redfish-virtualmedia+https://10.179.229.19/redfish/v1/Systems/WZP2423131V"
+#        bmcCredentialsName:
+#          name: "bmh-docmas02-secret"
+#        bootMACAddress: "40:a6:b7:21:ff:1c"
+#        ironicInspect: enabled
+#        # Use UEFISecureBoot to enable secure boot for this node
+#        bootMode: "legacy"
+#        rootDeviceHints:
+#          deviceName: "/dev/sda"
+#        nodeNetwork:
+#          interfaces:
+#            - name: "ens2f0"
+#              macAddress: "40:a6:b7:21:ff:1c"
+#            - name: "ens2f1"
+#              macAddress: "40:a6:b7:21:ff:1d"
+#            - name: "ens4f0"
+#              macAddress: "40:a6:b7:22:0d:18"
+#            - name: "ens4f1"
+#              macAddress: "40:a6:b7:22:0d:19"
+#          config:
+#            interfaces:
+#              - name: bond0
+#                description: Bond
+#                type: bond
+#                state: up
+#                ipv4:
+#                  enabled: false
+#                link-aggregation:
+#                  mode: '802.3ad'
+#                  options:
+#                    miimon: '100'
+#                  slaves:
+#                    - ens2f0
+#                    - ens4f1
+#              - name: ens2f0
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: ens4f1
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: bond0.3103
+#                state: up
+#                type: vlan
+#                vlan:
+#                  base-iface: bond0
+#                  id: 3103
+#                ipv4:
+#                  enabled: true
+#                  address:
+#                  - ip: 10.179.233.69
+#                    prefix-length: 23
+#              - name: bond1
+#                description: Bond
+#                type: bond
+#                state: up
+#                ipv4:
+#                  enabled: false
+#                link-aggregation:
+#                  mode: '802.3ad'
+#                  options:
+#                    miimon: '100'
+#                  slaves:
+#                    - ens2f1
+#                    - ens4f0
+#              - name: ens2f1
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: ens4f0
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: bond1.3504
+#                state: up
+#                type: vlan
+#                vlan:
+#                  base-iface: bond0
+#                  id: 3504
+#                ipv4:
+#                  enabled: true
+#                  address:
+#                  - ip: 172.16.79.5
+#                    prefix-length: 22
+#            dns-resolver:
+#              config:
+#                server:
+#                  - 10.179.232.138
+#                  - 10.179.232.139
+#            routes:
+#              config:
+#                - destination: 0.0.0.0/0
+#                  next-hop-address: 10.179.233.254
+#                  next-hop-interface: bond0
+#############################################################
+#      - hostName: "docmas03.m2lcwl.etisalat-nfvi.local"
+#        role: "master"
+#        bmcAddress: "redfish-virtualmedia+https://10.179.229.20/redfish/v1/Systems/WZP242312Z0"
+#        bmcCredentialsName:
+#          name: "bmh-docmas03-secret"
+#        bootMACAddress: "40:a6:b7:21:31:80"
+#        ironicInspect: enabled
+#      # Use UEFISecureBoot to enable secure boot for this node
+#        bootMode: "legacy"
+#        rootDeviceHints:
+#          deviceName: "/dev/sdb"
+#        nodeNetwork:
+#          interfaces:
+#            - name: "ens2f0"
+#              macAddress: "40:a6:b7:21:31:80"
+#            - name: "ens2f1"
+#              macAddress: "40:a6:b7:21:31:81"
+#            - name: "ens4f0"
+#              macAddress: "40:a6:b7:21:39:0c"
+#            - name: "ens4f1"
+#              macAddress: "40:a6:b7:21:39:0d"
+#          config:
+#            interfaces:
+#              - name: bond0
+#                description: Bond
+#                type: bond
+#                state: up
+#                ipv4:
+#                  enabled: false
+#                link-aggregation:
+#                  mode: '802.3ad'
+#                  options:
+#                    miimon: '100'
+#                  slaves:
+#                    - ens2f0
+#                    - ens4f1
+#              - name: ens2f0
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: ens4f1
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: bond0.3103
+#                state: up
+#                type: vlan
+#                vlan:
+#                  base-iface: bond0
+#                  id: 3103
+#                ipv4:
+#                  enabled: true
+#                  address:
+#                  - ip: 10.179.233.70
+#                    prefix-length: 23
+#              - name: bond1
+#                description: Bond
+#                type: bond
+#                state: up
+#                ipv4:
+#                  enabled: false
+#                link-aggregation:
+#                  mode: '802.3ad'
+#                  options:
+#                    miimon: '100'
+#                  slaves:
+#                    - ens2f1
+#                    - ens4f0
+#              - name: ens2f1
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: ens4f0
+#                state: up
+#                mtu: 9000
+#                type: ethernet
+#                ipv4:
+#                  enabled: false
+#              - name: bond1.3504
+#                state: up
+#                type: vlan
+#                vlan:
+#                  base-iface: bond0
+#                  id: 3504
+#                ipv4:
+#                  enabled: true
+#                  address:
+#                  - ip: 172.16.79.6
+#                    prefix-length: 22
+#            dns-resolver:
+#              config:
+#                server:
+#                  - 10.179.232.138
+#                  - 10.179.232.139
+#            routes:
+#              config:
+#                - destination: 0.0.0.0/0
+#                  next-hop-address: 10.179.233.254
+#                  next-hop-interface: bond0
 
-#      - hostName: "worker151.cwl-m2l.etisalat-nfvi.local"
+
+#      - hostName: "worker151.m2lcwl.etisalat-nfvi.local"
 #        role: "worker"
 #        bmcAddress: "idrac-virtualmedia+https://192.168.12.151/redfish/v1/Systems/System.Embedded.1"
 #        bmcCredentialsName:

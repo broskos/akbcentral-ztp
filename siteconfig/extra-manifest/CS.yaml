@@ -1,7 +1,7 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
-  name: redhat-operator-index
+  name: mgmtcluster-operator-index
   namespace: openshift-marketplace
 spec:
   image: mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.st00.etisalat-nfvi.local/ocp/redhat-operator-index:v4.10

@@ -1,16 +1,16 @@
 apiVersion: ran.openshift.io/v1
 kind: SiteConfig
 metadata:
-  name: "cwl-akb"
-  namespace: "cwl-akb"
+  name: "akbcwl"
+  namespace: "akbcwl"
 spec:
-  baseDomain: "jnpr.bos2.lab"
+  baseDomain: "etisalat-nfvi.local"
   pullSecretRef:
     name: "assisted-deployment-pull-secret"
   clusterImageSetNameRef: "openshift-v4.10.36-mirror"
   sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDOtEcFt5sUdExEARrFADxsj0ej9V/9keV5+4aSbC0r2BCHRIqrWUtMKkuUtPEg5kB0wzSX4oU0MSFsmitsuk66+1uc9Aj/Zg8aGzQwJG+VeOcVu5MShNCkGueYGLJsdVdIsqa2g0TUx118+Xi85zkooTfQeqdwk4MLkIbzCLZDF4UMQJgov0Zqs88QcNUpvG1qsnRgpuU+rPEYSbg2u+u1n01HnqGpJdu7e0X9+rlOyVOMVH9pWLL3CyVgVIMr90nNqgrHxB7fvBdk7Neyr+KItgcv87Cr5iQqjwMDxj+tTNPF25bQVznSAad53v77uH6HzubncWIo76+kGjToBzAKCf2lLebqmF1iDUrpNVQwpRsVwe7Jz1Y6W08ThoHCjlZ0FYvrelM4eYn6qsrTgeZMaFayuryuF4lgQ7ZBipZkVHKKJkrlVxx+YCzAWLTnlZdiHG8rRykKOLb1Ofaxu+3R3OKiF2AueMn66qKUe5X/rVqXoEr2YJFMyx0RLgHMJas= mano@bastion"
   clusters:
-  - clusterName: "cwl-akb"
+  - clusterName: "akbcwl"
     networkType: "OVNKubernetes"
     extraManifestPath: extra-manifest  # SH: this could be any directory name, but has to match whats created in the folder
     extraManifests:
@@ -19,13 +19,12 @@ spec:
         include:
           - CS.yaml
           - ICSP.yaml
-          - ospdo-icsp.yaml
           - mcp-profile1.yaml
           - mcp-profile2.yaml
     clusterLabels:
       # These example cluster labels correspond to the bindingRules in the PolicyGenTemplate examples in ../policygentemplates:
       core: true
-      cluster: cwl-akb
+      cluster: akbcwl
     clusterNetwork:
       - cidr: 10.128.0.0/14
         hostPrefix: 23
@@ -50,7 +49,7 @@ spec:
     #  filePath: "example-hw.profile"
 ################################################################
     nodes:
-      - hostName: "master1.cwl-akb.jnpr.bos2.lab"
+      - hostName: "master1.akbcwl.etisalat-nfvi.local"
         role: "master"
         bmcAddress: "idrac-virtualmedia+https://192.168.12.166/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
@@ -216,7 +215,7 @@ spec:
                   next-hop-address: 192.168.13.1
                   next-hop-interface: bond0
 ############################################################
-      - hostName: "master2.cwl-akb.jnpr.bos2.lab"
+      - hostName: "master2.akbcwl.etisalat-nfvi.local"
         role: "master"
         bmcAddress: "idrac-virtualmedia+https://192.168.12.164/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
@@ -381,7 +380,7 @@ spec:
                   next-hop-address: 192.168.13.1
                   next-hop-interface: bond0
 ############################################################
-      - hostName: "master3.cwl-akb.jnpr.bos2.lab"
+      - hostName: "master3.akbcwl.etisalat-nfvi.local"
         role: "master"
         bmcAddress: "idrac-virtualmedia+https://192.168.12.148/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
