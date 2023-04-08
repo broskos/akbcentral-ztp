@@ -48,12 +48,12 @@ spec:
     #  filePath: "example-hw.profile"
 ################################################################
     nodes:
-      - hostName: "docmas01.m2lcwl.etisalat-nfvi.local"
+      - hostName: "auh-m2l00-nec-nfvi2-rk01-dell-docpmas01"
         role: "master"
-        bmcAddress: "redfish-virtualmedia+https://10.179.229.18/redfish/v1/Systems/WZP242312X4"
+        bmcAddress: "idrac-virtualmedia+https://10.179.228.13/redfish/v1/Systems/1/"
         bmcCredentialsName:
           name: "bmh-docmas01-secret"
-        bootMACAddress: "B4:96:91:B6:2B:C4"
+        bootMACAddress: "24:6E:96:99:E8:08"
         ironicInspect: enabled
         # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
@@ -88,6 +88,9 @@ spec:
                   mode: '802.3ad'
                   options:
                     miimon: '100'
+                    xmit_hash_policy: 'layer3+4'
+                    lacp_rate: fast
+                    updelay: '200'
                   slaves:
                     - ens2f0
                     - ens4f1
@@ -124,6 +127,9 @@ spec:
                   mode: '802.3ad'
                   options:
                     miimon: '100'
+                    xmit_hash_policy: 'layer3+4'
+                    lacp_rate: fast
+                    updelay: '200'
                   slaves:
                     - ens2f1
                     - ens4f0
@@ -161,9 +167,9 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0
 ############################################################
-      - hostName: "docmas02.m2lcwl.etisalat-nfvi.local"
+      - hostName: "auh-m2l00-nec-nfvi2-rk03-dell-sdn02"
         role: "master"
-        bmcAddress: "redfish-virtualmedia+https://10.179.229.19/redfish/v1/Systems/WZP2423131V"
+        bmcAddress: "idrac-virtualmedia+https://10.179.228.14/redfish/v1/Systems/1/"
         bmcCredentialsName:
           name: "bmh-docmas02-secret"
         bootMACAddress: "40:a6:b7:21:ff:1c"
@@ -194,6 +200,9 @@ spec:
                   mode: '802.3ad'
                   options:
                     miimon: '100'
+                    xmit_hash_policy: 'layer3+4'
+                    lacp_rate: fast
+                    updelay: '200'
                   slaves:
                     - ens2f0
                     - ens4f1
@@ -230,6 +239,9 @@ spec:
                   mode: '802.3ad'
                   options:
                     miimon: '100'
+                    xmit_hash_policy: 'layer3+4'
+                    lacp_rate: fast
+                    updelay: '200'
                   slaves:
                     - ens2f1
                     - ens4f0
@@ -267,9 +279,9 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0
 ############################################################
-      - hostName: "docmas03.m2lcwl.etisalat-nfvi.local"
+      - hostName: "auh-m2l00-nec-nfvi2-rk03-dell-sdn03"
         role: "master"
-        bmcAddress: "redfish-virtualmedia+https://10.179.229.20/redfish/v1/Systems/WZP242312Z0"
+        bmcAddress: "idrac-virtualmedia+https://10.179.228.15/redfish/v1/Systems/1/"
         bmcCredentialsName:
           name: "bmh-docmas03-secret"
         bootMACAddress: "40:a6:b7:21:31:80"
@@ -300,6 +312,9 @@ spec:
                   mode: '802.3ad'
                   options:
                     miimon: '100'
+                    xmit_hash_policy: 'layer3+4'
+                    lacp_rate: fast
+                    updelay: '200'
                   slaves:
                     - ens2f0
                     - ens4f1
@@ -336,6 +351,9 @@ spec:
                   mode: '802.3ad'
                   options:
                     miimon: '100'
+                    xmit_hash_policy: 'layer3+4'
+                    lacp_rate: fast
+                    updelay: '200'
                   slaves:
                     - ens2f1
                     - ens4f0
@@ -414,6 +432,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens2f0
 #                    - ens4f1
@@ -450,6 +471,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens2f1
 #                    - ens4f0
@@ -520,6 +544,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens2f0
 #                    - ens4f1
@@ -556,6 +583,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens2f1
 #                    - ens4f0
@@ -626,6 +656,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens2f0
 #                    - ens4f1
@@ -662,6 +695,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens2f1
 #                    - ens4f0
@@ -751,6 +787,9 @@ spec:
 #                  mode: '802.3ad'
 #                  options:
 #                    miimon: '100'
+#                    xmit_hash_policy: 'layer3+4'
+#                    lacp_rate: fast
+#                    updelay: '200'
 #                  slaves:
 #                    - ens4f0
 #                    - ens4f1

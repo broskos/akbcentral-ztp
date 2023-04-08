@@ -7,16 +7,16 @@ generators:
 
 # Common for all Core deployments
 - global/common-core.yaml
-- global/common-core-secret.yaml
+#- global/common-core-secret.yaml
 
 # Common for all RAN deployments
 #- global/common-ran.yaml
 
 # Specific to the cwl-site1 cluster
-- cluster/Core/cwl-site1.yaml
+- cluster/Core/m2lcwl.yaml
 
 # Specific to the cwl-site2 cluster
-- cluster/Core/cwl-site2.yaml
+- cluster/Core/akbcwl.yaml
 
 resources:
-- ns.yaml
+#- ns.yaml

@@ -3,5 +3,5 @@ kind: Kustomization
 #resources:
 
 generators:
-  - cwl-m2l.yaml
-#  - cwl-akb.yaml
+  - m2lcwl.yaml
+#  - akbcwl.yaml

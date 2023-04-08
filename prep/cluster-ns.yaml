@@ -1,14 +1,20 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cwl-m2l
+  name: m2lcwl
   labels:
-    kubernetes.io/metadata.name: cwl-m2l
+    kubernetes.io/metadata.name: m2lcwl
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cwl-akb
+  name: akb-cwl
   labels:
-    kubernetes.io/metadata.name: cwl-akb
-
+    kubernetes.io/metadata.name: akb-cwl
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ztp-common
+  labels:
+    kubernetes.io/metadata.name: ztp-common

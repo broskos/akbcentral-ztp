@@ -4,3 +4,4 @@ resources:
 - cluster-ns.yaml
 - secrets.yaml
 - image.yaml
+- provisioning-override.yaml
