@@ -393,9 +393,9 @@ spec:
 
       - hostName: "auh-m2l00-nec-nfvi2-rk01-cisco-docpwrk01"
         role: "master"
-        bmcAddress: "idrac-virtualmedia+https://10.179.229.5/redfish/v1/Systems/1"
+        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp05.sub04.localdomain/redfish/v1/Systems/1"
         bmcCredentialsName:
-          name: "bmh-docwrk01-secret"
+          name: "bmh-docpwrk01-secret"
         bootMACAddress: "24:6E:96:91:80:A4"
         ironicInspect: enabled
       # Use UEFISecureBoot to enable secure boot for this node
