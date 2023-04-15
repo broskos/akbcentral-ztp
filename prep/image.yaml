@@ -4,4 +4,4 @@ kind: ClusterImageSet
 metadata:
   name: openshift-v4.10.43-quay
 spec:
-  releaseImage: mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.st00.etisalat-nfvi.local/ocp/release:4.10.43-x86_64
+  releaseImage: mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/release:4.10.43-x86_64

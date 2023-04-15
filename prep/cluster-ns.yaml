@@ -8,9 +8,9 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: akb-cwl
+  name: akbcwl
   labels:
-    kubernetes.io/metadata.name: akb-cwl
+    kubernetes.io/metadata.name: akbcwl
 ---
 apiVersion: v1
 kind: Namespace
