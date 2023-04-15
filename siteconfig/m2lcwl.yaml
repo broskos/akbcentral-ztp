@@ -397,7 +397,6 @@ spec:
         bmcCredentialsName:
           name: "bmh-docpwrk01-secret"
         bootMACAddress: "3C:FD:FE:BD:AE:20"
-        ironicInspect: enabled
       # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
