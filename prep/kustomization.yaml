@@ -5,3 +5,5 @@ resources:
 - secrets.yaml
 - image.yaml
 - provisioning-override.yaml
+- assisted-installer-pvc.yaml
+- mgmtcluster-registry-config.yaml

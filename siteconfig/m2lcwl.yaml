@@ -91,7 +91,7 @@ spec:
 #                    xmit_hash_policy: 'layer3+4'
 #                    lacp_rate: fast
 #                    updelay: '200'
-#                  slaves:
+#                  port:
 #                    - ens1f0
 #                    - ens2f1
 #              - name: ens1f0
@@ -130,7 +130,7 @@ spec:
 #                    xmit_hash_policy: 'layer3+4'
 #                    lacp_rate: fast
 #                    updelay: '200'
-#                  slaves:
+#                  port:
 #                    - ens1f1
 #                    - ens2f0
 #              - name: ens1f1
@@ -203,7 +203,7 @@ spec:
 #                    xmit_hash_policy: 'layer3+4'
 #                    lacp_rate: fast
 #                    updelay: '200'
-#                  slaves:
+#                  port:
 #                    - ens1f0
 #                    - ens2f1
 #              - name: ens1f0
@@ -242,7 +242,7 @@ spec:
 #                    xmit_hash_policy: 'layer3+4'
 #                    lacp_rate: fast
 #                    updelay: '200'
-#                  slaves:
+#                  port:
 #                    - ens1f1
 #                    - ens2f0
 #              - name: ens1f1
@@ -315,7 +315,7 @@ spec:
 #                    xmit_hash_policy: 'layer3+4'
 #                    lacp_rate: fast
 #                    updelay: '200'
-#                  slaves:
+#                  port:
 #                    - ens1f0
 #                    - ens2f1
 #              - name: ens1f0
@@ -354,7 +354,7 @@ spec:
 #                    xmit_hash_policy: 'layer3+4'
 #                    lacp_rate: fast
 #                    updelay: '200'
-#                  slaves:
+#                  port:
 #                    - ens1f1
 #                    - ens2f0
 #              - name: ens1f1
@@ -426,7 +426,7 @@ spec:
                     xmit_hash_policy: 'layer3+4'
                     lacp_rate: fast
                     updelay: '200'
-                  slaves:
+                  port:
                     - ens1f0
                     - ens4f1
               - name: ens1f0
@@ -465,7 +465,7 @@ spec:
                     xmit_hash_policy: 'layer3+4'
                     lacp_rate: fast
                     updelay: '200'
-                  slaves:
+                  port:
                     - ens4f0
                     - ens8f1
               - name: ens4f0
