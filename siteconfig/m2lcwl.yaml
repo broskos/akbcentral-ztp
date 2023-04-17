@@ -500,6 +500,6 @@ spec:
               config:
                 - destination: 0.0.0.0/0
                   next-hop-address: 10.179.233.254
-                  next-hop-interface: bond0.3013
+                  next-hop-interface: bond0.3103
 
 
