@@ -52,7 +52,7 @@ spec:
         role: "master"
         bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk01-dell-sdn01.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
-          name: "bmh-docmas01-secret"
+          name: "bmh-docpmas01-secret"
         bootMACAddress: "24:6E:96:99:E8:08"
         ironicInspect: enabled
         # Use UEFISecureBoot to enable secure boot for this node
@@ -171,7 +171,7 @@ spec:
 #        role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk02-dell-sdn02.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
 #        bmcCredentialsName:
-#          name: "bmh-docmas02-secret"
+#          name: "bmh-docpmas02-secret"
 #        bootMACAddress: "24:6E:96:9C:33:20"
 #        ironicInspect: enabled
 #        # Use UEFISecureBoot to enable secure boot for this node
@@ -279,11 +279,11 @@ spec:
 #                  next-hop-address: 10.179.233.254
 #                  next-hop-interface: bond0.3103
 ###########################################################
-#      - hostName: "auh-m2l00-nec-nfvi2-rk03-dell-docmas03"
+#      - hostName: "auh-m2l00-nec-nfvi2-rk03-dell-docpmas03"
 #        role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-sdn03.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
 #        bmcCredentialsName:
-#          name: "bmh-docmas03-secret"
+#          name: "bmh-docpmas03-secret"
 #        bootMACAddress: "24:6E:96:9C:2A:B4"
 #        ironicInspect: enabled
 #      # Use UEFISecureBoot to enable secure boot for this node
