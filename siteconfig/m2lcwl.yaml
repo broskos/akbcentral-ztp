@@ -481,7 +481,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 10.179.233.107
+                  - ip: 10.179.233.76
                     prefix-length: 23
               - name: bond1
                 description: Bond1
