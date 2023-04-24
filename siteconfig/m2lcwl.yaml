@@ -282,7 +282,7 @@ spec:
       - hostName: "auh-m2l00-nec-nfvi2-rk03-dell-docpmas03"
         role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-sdn03.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
-        bmcAddress: "idrac-virtualmedia+https://10.179.228.13/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "idrac-virtualmedia+https://10.179.228.15/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
           name: "bmh-docpmas03-secret"
         bootMACAddress: "24:6E:96:9C:2A:B4"
