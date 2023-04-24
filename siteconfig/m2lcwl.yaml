@@ -83,7 +83,7 @@ spec:
             interfaces:
               - name: eno1
                 description: eno1
-                type: interface
+                type: ethernet
                 ipv4:
                   enabled: true
                   address:
@@ -205,7 +205,7 @@ spec:
             interfaces:
               - name: eno1
                 description: eno1
-                type: interface
+                type: ethernet
                 ipv4:
                   enabled: true
                   address:
@@ -327,7 +327,7 @@ spec:
             interfaces:
               - name: eno1
                 description: eno1
-                type: interface
+                type: ethernet
                 ipv4:
                   enabled: true
                   address:
