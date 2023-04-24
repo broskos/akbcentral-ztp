@@ -79,8 +79,16 @@ spec:
               macAddress: " 50:6B:4B:09:06:4D"
           config:
             interfaces:
+              - name: eno1
+                description: eno1
+                type: interface
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 192.168.20.11
+                    prefix-length: 24
               - name: bond0
-                description: Bond
+                description: Bond0
                 type: bond
                 state: up
                 ipv4:
@@ -119,7 +127,7 @@ spec:
                   - ip: 10.179.233.68
                     prefix-length: 23
               - name: bond1
-                description: Bond
+                description: Bond1
                 type: bond
                 state: up
                 ipv4:
@@ -191,6 +199,14 @@ spec:
               macAddress: "50:6B:4B:09:06:AD"
           config:
             interfaces:
+              - name: eno1
+                description: eno1
+                type: interface
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 192.168.20.12
+                    prefix-length: 24
               - name: bond0
                 description: Bond
                 type: bond
@@ -303,8 +319,16 @@ spec:
               macAddress: "50:6B:4B:09:05:A5"
           config:
             interfaces:
+              - name: eno1
+                description: eno1
+                type: interface
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 192.168.20.13
+                    prefix-length: 24
               - name: bond0
-                description: Bond
+                description: Bond0
                 type: bond
                 state: up
                 ipv4:
@@ -343,7 +367,7 @@ spec:
                   - ip: 10.179.233.70
                     prefix-length: 23
               - name: bond1
-                description: Bond
+                description: Bond1
                 type: bond
                 state: up
                 ipv4:
@@ -415,7 +439,7 @@ spec:
 #          config:
 #            interfaces:
 #              - name: bond0
-#                description: Bond
+#                description: Bond0
 #                type: bond
 #                state: up
 #                ipv4:
@@ -454,7 +478,7 @@ spec:
 #                  - ip: 10.179.233.76
 #                    prefix-length: 23
 #              - name: bond1
-#                description: Bond
+#                description: Bond1
 #                type: bond
 #                state: up
 #                ipv4:
@@ -526,7 +550,7 @@ spec:
 #          config:
 #            interfaces:
 #              - name: bond0
-#                description: Bond
+#                description: Bond0
 #                type: bond
 #                state: up
 #                ipv4:
@@ -565,7 +589,7 @@ spec:
 #                  - ip: 10.179.233.77
 #                    prefix-length: 23
 #              - name: bond1
-#                description: Bond
+#                description: Bond1
 #                type: bond
 #                state: up
 #                ipv4:
