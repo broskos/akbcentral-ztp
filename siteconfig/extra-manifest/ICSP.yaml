@@ -8,6 +8,9 @@ metadata:
 spec:
   repositoryDigestMirrors:
   - mirrors:
+    - mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/support-tools
+    source: registry.redhat.io/rhel8/support-tools
+  - mirrors:
     - mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/ansible-automation-platform-21-controller-rhel8-operator
     source: registry.redhat.io/ansible-automation-platform-21/controller-rhel8-operator
   - mirrors:
