@@ -67,3 +67,9 @@ data:
       mirror-by-digest-only = true    
       [[registry.mirror]]
         location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/multicluster-engine-assisted-installer-agent-rhel8"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/multicluster-engine/assisted-installer-rhel8"
+      mirror-by-digest-only = true    
+      [[registry.mirror]]
+        location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/multicluster-engine-assisted-installer-rhel8"
