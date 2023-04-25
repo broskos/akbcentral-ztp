@@ -181,18 +181,18 @@ spec:
           deviceName: "/dev/sda"
         nodeNetwork:
           interfaces:
-            - name: "ens2f0"
+            - name: "ens1f0"
               macAddress: "50:6B:4B:09:06:94"
-            - name: "ens2f1"
+            - name: "ens1f1"
               macAddress: "50:6B:4B:09:06:95"
-            - name: "ens4f0"
+            - name: "ens2f0"
               macAddress: "50:6B:4B:09:06:AC"
-            - name: "ens4f1"
+            - name: "ens2f1"
               macAddress: "50:6B:4B:09:06:AD"
           config:
             interfaces:
               - name: bond0
-                description: Bond
+                description: Bond0
                 type: bond
                 state: up
                 ipv4:
@@ -231,7 +231,7 @@ spec:
                   - ip: 10.179.233.69
                     prefix-length: 23
               - name: bond1
-                description: Bond
+                description: Bond0
                 type: bond
                 state: up
                 ipv4:
@@ -293,13 +293,13 @@ spec:
           deviceName: "/dev/sda"
         nodeNetwork:
           interfaces:
-            - name: "ens2f0"
+            - name: "ens1f0"
               macAddress: "50:6B:4B:09:06:64"
-            - name: "ens2f1"
+            - name: "ens1f1"
               macAddress: "50:6B:4B:09:06:65"
-            - name: "ens4f0"
+            - name: "ens2f0"
               macAddress: "50:6B:4B:09:05:A4"
-            - name: "ens4f1"
+            - name: "ens2f1"
               macAddress: "50:6B:4B:09:05:A5"
           config:
             interfaces:
