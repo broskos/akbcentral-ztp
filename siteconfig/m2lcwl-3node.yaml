@@ -76,9 +76,9 @@ spec:
             - name: "ens1f1"
               macAddress: "50:6B:4B:09:05:AD"
             - name: "ens2f0"
-              macAddress: " 50:6B:4B:09:06:4C"
+              macAddress: "50:6B:4B:09:06:4C"
             - name: "ens2f1"
-              macAddress: " 50:6B:4B:09:06:4D"
+              macAddress: "50:6B:4B:09:06:4D"
           config:
             interfaces:
               - name: eno1
