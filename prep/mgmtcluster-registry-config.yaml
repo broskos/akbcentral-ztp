@@ -57,6 +57,12 @@ data:
         location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/ocp4"
     [[registry]]
       prefix = ""
+      location = "quay.io/openshift-release-dev/ocp-v4.0-art-dev"
+      mirror-by-digest-only = true    
+      [[registry.mirror]]
+        location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/ocp4"
+    [[registry]]
+      prefix = ""
       location = "registry.redhat.io/multicluster-engine/assisted-installer-agent-rhel8"
       mirror-by-digest-only = true    
       [[registry.mirror]]
