@@ -7,4 +7,4 @@ generators:
 #  - akbcwl.yaml
 #  - m2lcwl-3node.yaml
   - m2lsno1.yaml
-#  - m2lsno2.yaml
+  - m2lsno2.yaml
