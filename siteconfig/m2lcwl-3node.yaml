@@ -69,8 +69,6 @@ spec:
               start: 800000
         nodeNetwork:
           interfaces:
-            - name: "eno1"
-              macAddress: "24:6E:96:99:E8:08"
             - name: "ens1f0"
               macAddress: "50:6B:4B:09:05:AC"
             - name: "ens1f1"
@@ -81,14 +79,6 @@ spec:
               macAddress: "50:6B:4B:09:06:4D"
           config:
             interfaces:
-              - name: eno1
-                description: eno1
-                type: ethernet
-                ipv4:
-                  enabled: true
-                  address:
-                  - ip: 192.168.20.11
-                    prefix-length: 24
               - name: bond0
                 description: Bond0
                 type: bond
@@ -191,8 +181,6 @@ spec:
           deviceName: "/dev/sda"
         nodeNetwork:
           interfaces:
-            - name: "eno1"
-              macAddress: "24:6E:96:9C:33:20"
             - name: "ens2f0"
               macAddress: "50:6B:4B:09:06:94"
             - name: "ens2f1"
@@ -203,14 +191,6 @@ spec:
               macAddress: "50:6B:4B:09:06:AD"
           config:
             interfaces:
-              - name: eno1
-                description: eno1
-                type: ethernet
-                ipv4:
-                  enabled: true
-                  address:
-                  - ip: 192.168.20.12
-                    prefix-length: 24
               - name: bond0
                 description: Bond
                 type: bond
@@ -313,8 +293,6 @@ spec:
           deviceName: "/dev/sda"
         nodeNetwork:
           interfaces:
-            - name: "eno1"
-              macAddress: "24:6E:96:9C:2A:B4"
             - name: "ens2f0"
               macAddress: "50:6B:4B:09:06:64"
             - name: "ens2f1"
@@ -325,14 +303,6 @@ spec:
               macAddress: "50:6B:4B:09:05:A5"
           config:
             interfaces:
-              - name: eno1
-                description: eno1
-                type: ethernet
-                ipv4:
-                  enabled: true
-                  address:
-                  - ip: 192.168.20.13
-                    prefix-length: 24
               - name: bond0
                 description: Bond0
                 type: bond
