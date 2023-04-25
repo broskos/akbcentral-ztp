@@ -43,7 +43,8 @@ spec:
     nodes:
       - hostName: "auh-m2l00-nec-nfvi2-rk01-cisco-docpwrk02"
         role: "master"
-        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp06.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+#        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp06.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "idrac-virtualmedia+https://10.179.229.6/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
           name: "bmh-docpwrk02-secret"
         bootMACAddress: "3C:FD:FE:BD:C6:20"
