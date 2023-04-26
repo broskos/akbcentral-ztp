@@ -30,8 +30,8 @@ spec:
       #- cidr: 1001:1::/48
         #hostPrefix: 64
     # For 3-node and standard clusters with static IPs, the API and Ingress IPs must be configured here
-#    apiVIP: 10.179.233.107
-#    ingressVIP: 10.179.233.108
+    apiVIP: 10.179.233.107
+    ingressVIP: 10.179.233.108
     # apiVIP: 1111:2222:3333:4444::1:1
     # ingressVIP: 1111:2222:3333:4444::1:2
     serviceNetwork:
