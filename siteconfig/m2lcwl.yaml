@@ -55,7 +55,6 @@ spec:
         bmcCredentialsName:
           name: "bmh-docpmas01-secret"
         bootMACAddress: "24:6E:96:99:E8:08"
-        ironicInspect: enabled
         # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
@@ -174,7 +173,6 @@ spec:
         bmcCredentialsName:
           name: "bmh-docpmas02-secret"
         bootMACAddress: "24:6E:96:9C:33:20"
-        ironicInspect: enabled
         # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
@@ -286,7 +284,6 @@ spec:
         bmcCredentialsName:
           name: "bmh-docpmas03-secret"
         bootMACAddress: "24:6E:96:9C:2A:B4"
-        ironicInspect: enabled
       # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
