@@ -73,3 +73,33 @@ data:
       mirror-by-digest-only = true    
       [[registry.mirror]]
         location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/multicluster-engine-assisted-installer-rhel8"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/multicluster-engine/cluster-proxy-addon-rhel8"
+      mirror-by-digest-only = true    
+      [[registry.mirror]]
+        location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/multicluster-engine-cluster-proxy-addon-rhel8"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/multicluster-engine/cluster-proxy-rhel8"
+      mirror-by-digest-only = true    
+      [[registry.mirror]]
+        location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/multicluster-engine-cluster-proxy-rhel8"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/rhacm2/acm-governance-policy-framework-addon-rhel8"
+      mirror-by-digest-only = true    
+      [[registry.mirror]]
+        location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/rhacm2-acm-governance-policy-framework-addon-rhel8"
+    [[registry]]
+          prefix = ""
+          location = "registry.redhat.io/rhacm2/kube-rbac-proxy-rhel8"
+          mirror-by-digest-only = true    
+          [[registry.mirror]]
+            location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/rhacm2-kube-rbac-proxy-rhel8"
+    [[registry]]
+      prefix = ""
+      location = "registry.redhat.io/multicluster-engine/multicloud-manager-rhel8"
+      mirror-by-digest-only = true    
+      [[registry.mirror]]
+        location = "mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/multicluster-engine-multicloud-manager-rhel8"
