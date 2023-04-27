@@ -17,4 +17,9 @@ spec:
     - fileName: OperatorHub.yaml
       remediationAction: enforce
       policyName: "disable-catalogs"
-
+    - fileName: OperatorHub.yaml
+      remediationAction: enforce
+      policyName: "config-policy"
+    - fileName: DefaultCatsrc.yaml
+      remediationAction: enforce
+      policyName: "config-policy"
