@@ -1,0 +1,19 @@
+apiVersion: ran.openshift.io/v1alpha1
+kind: ClusterGroupUpgrade
+metadata:
+  name: m2l-day2
+  namespace: ztp-install
+spec:
+  clusters:
+  - m2lcwl
+  - m2lsno1
+  - m2lsno2
+  enable: true
+  managedPolicies:
+  - common-core-disable-catalogs
+  - common-core-config-cs
+  - common-core-config-icsp
+  preCaching: false
+  remediationStrategy:
+    maxConcurrency: 1
+    timeout: 240
