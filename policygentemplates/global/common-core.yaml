@@ -8,7 +8,6 @@ spec:
   bindingRules:
     # These policies will correspond to all clusters with this label:
     core: "true"
-  remediationAction: enforce
   sourceFiles:
     # Create operators policies that will be installed in all Core clusters
      
@@ -16,5 +15,6 @@ spec:
     # Disable default operator catalogs
     #
     - fileName: OperatorHub.yaml
+      remediationAction: enforce
       policyName: "disable-catalogs"
 
