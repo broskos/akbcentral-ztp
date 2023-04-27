@@ -24,6 +24,8 @@ spec:
     clusterLabels:
       core: true
       cluster: m2lsno2
+    machineNetwork:
+      - 10.179.232.0/23
     clusterNetwork:
       - cidr: 10.128.0.0/14
         hostPrefix: 23
