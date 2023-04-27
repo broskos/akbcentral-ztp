@@ -8,11 +8,13 @@ generators:
 # Common for all Core deployments
 - global/common-core.yaml
 
-# Specific to the cwl-site1 cluster
+# Specific to the m2lcwl cluster
 - cluster/Core/m2lcwl.yaml
+- cluster/Core/m2lsno1.yaml
+- cluster/Core/m2lsno2.yaml
 
-# Specific to the cwl-site2 cluster
-- cluster/Core/akbcwl.yaml
+# Specific to the akbcwl cluster
+# - cluster/Core/akbcwl.yaml
 
 resources:
 #- ns.yaml
