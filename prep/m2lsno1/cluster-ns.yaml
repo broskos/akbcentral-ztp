@@ -1,0 +1,7 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: m2lsno1
+  labels:
+    kubernetes.io/metadata.name: m2lsno1
