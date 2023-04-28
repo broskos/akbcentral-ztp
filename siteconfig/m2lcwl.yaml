@@ -389,9 +389,10 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0.3103
 
-      - hostName: "auh-m2l00-nec-nfvi2-rk01-cisco-docpwrk01"
+      - hostName: "auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01"
         role: "master"
-        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp05.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+       # bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp05.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "idrac-virtualmedia+https://10.179.229.5/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
           name: "bmh-docpwrk01-secret"
         bootMACAddress: "3C:FD:FE:BD:AE:20"
@@ -500,9 +501,10 @@ spec:
                   next-hop-address: 10.179.233.254
                   next-hop-interface: bond0.3103
 
-      - hostName: "auh-m2l00-nec-nfvi2-rk01-cisco-docpwrk02"
+      - hostName: "auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02"
         role: "master"
-        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp06.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+       # bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp06.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "idrac-virtualmedia+https://10.179.229.6/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName:
           name: "bmh-docpwrk02-secret"
         bootMACAddress: "3C:FD:FE:BD:C6:20"

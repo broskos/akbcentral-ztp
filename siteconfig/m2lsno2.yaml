@@ -43,7 +43,7 @@ spec:
     #  filePath: "example-hw.profile"
 ################################################################
     nodes:
-      - hostName: "auh-m2l00-nec-nfvi2-rk01-cisco-docpwrk02"
+      - hostName: "auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02"
         role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk03-dell-comp06.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
         bmcAddress: "idrac-virtualmedia+https://10.179.229.6/redfish/v1/Systems/System.Embedded.1"
