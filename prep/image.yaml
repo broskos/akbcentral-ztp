@@ -4,3 +4,9 @@ kind: ClusterImageSet
 metadata:
   name: openshift-v4.10.43-quay
 spec:0: mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/release:4.10.43-x86_64
+---
+apiVersion: hive.openshift.io/v1
+kind: ClusterImageSet
+metadata:
+  name: openshift-v4.10.57-quay
+spec:0: mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local/ocp/release:4.10.57-x86_64
