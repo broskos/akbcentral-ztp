@@ -7,7 +7,6 @@ generators:
 
 # Common for all Core deployments
 - global/common-core.yaml
-- global/common-core-ca-cert.yaml
 
 # Specific to the m2lcwl cluster
 - cluster/Core/m2lcwl.yaml
