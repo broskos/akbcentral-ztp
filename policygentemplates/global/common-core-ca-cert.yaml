@@ -48,11 +48,3 @@ data:
     qgEuqU3gHLFGdyucH5gB7J9UdTbH+uB+yhqyvNF8zixAYr4pNWCc/cmwlWRK41Zo
     eGagWpOoRo/A6VJgBwwXyw==
     -----END CERTIFICATE-----
----
-apiVersion: config.openshift.io/v1
-kind: Image
-metadata:
-  name: cluster
-spec:
-  additionalTrustedCA:
-    name: registry-cas
