@@ -6,7 +6,7 @@ metadata:
     ran.openshift.io/ztp-deploy-wave: "100"
 spec:
   channel: stable-4.10
-  upstream: https://update-service-route-openshift-update-service.apps.akbmgt.etisalat-nfvi.local/api/upgrades_info/v1/graph/5
+  upstream: https://update-service-route-openshift-update-service.apps.akbmgt.etisalat-nfvi.local/api/upgrades_info/v1/graph
   # default upstream.
 # add these changes using PGT overlay to generate the policy to perform and verify platform upgrade.
 #  desiredUpdate:
