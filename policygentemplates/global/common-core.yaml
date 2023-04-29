@@ -71,3 +71,6 @@ spec:
           qgEuqU3gHLFGdyucH5gB7J9UdTbH+uB+yhqyvNF8zixAYr4pNWCc/cmwlWRK41Zo
           eGagWpOoRo/A6VJgBwwXyw==
           -----END CERTIFICATE-----
+    - fileName: CommonCoreImage.yaml
+      remediationAction: enforce
+      policyName: "config-cluster-image"
