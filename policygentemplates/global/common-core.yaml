@@ -23,6 +23,6 @@ spec:
     - fileName: imageContentSourcePolicy.yaml
       remediationAction: enforce
       policyName: "config-icsp"
-    - fileName: ClusterVersion.yaml
+    - fileName: ClusterVersionMgmt.yaml
       remediationAction: enforce
       policyName: "config-update-service"
