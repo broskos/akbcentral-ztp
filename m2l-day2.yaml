@@ -13,6 +13,7 @@ spec:
   - common-core-disable-catalogs
   - common-core-config-cs
   - common-core-config-icsp
+  - common-core-config-update-service
   preCaching: false
   remediationStrategy:
     maxConcurrency: 1
