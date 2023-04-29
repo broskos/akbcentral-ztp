@@ -17,10 +17,10 @@ spec:
     - fileName: OperatorHub.yaml
       remediationAction: enforce
       policyName: "disable-catalogs"
-    - fileName: catalogSource.yaml
+    - fileName: catalogSourceMgmt.yaml
       remediationAction: enforce
       policyName: "config-cs"
-    - fileName: imageContentSourcePolicy.yaml
+    - fileName: imageContentSourcePolicyMgmt.yaml
       remediationAction: enforce
       policyName: "config-icsp"
     - fileName: ClusterVersionMgmt.yaml
