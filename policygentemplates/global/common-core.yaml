@@ -74,3 +74,6 @@ spec:
     - fileName: CommonCoreImage.yaml
       remediationAction: enforce
       policyName: "config-cluster-image"
+    - fileName: CommonCoreProxy.yaml
+      remediationAction: enforce
+      policyName: "config-cluster-proxy"
