@@ -30,7 +30,7 @@ spec:
       remediationAction: enforce
       policyName: "config-trusted-ca"
       data:
-        ca-bundle.crt: |
+        mgmtcluster-registry-quay-quay-enterprise.apps.akbmgt.etisalat-nfvi.local: |
           -----BEGIN CERTIFICATE-----
           MIIDeTCCAmGgAwIBAgIIDT38bH7LorwwDQYJKoZIhvcNAQELBQAwJjEkMCIGA1UE
           AwwbaW5ncmVzcy1vcGVyYXRvckAxNjgxMjI3MjM2MB4XDTIzMDQxMTE1MzM1NloX
