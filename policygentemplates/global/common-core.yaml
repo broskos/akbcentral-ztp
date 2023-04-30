@@ -73,6 +73,9 @@ spec:
 #    - fileName: CommonCoreImage.yaml
 #      remediationAction: enforce
 #      policyName: "config-cluster-image"
-    - fileName: CaCertMc.yaml
+    - fileName: CACert-MC-Master.yaml
       remediationAction: enforce
-      policyName: "config-cluster-mgmt-ca"
+      policyName: "config-cluster-mgmt-ca-master"
+    - fileName: CACert-MC-Worker.yaml
+      remediationAction: enforce
+      policyName: "config-cluster-mgmt-ca-worker"
