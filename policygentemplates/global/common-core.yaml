@@ -76,6 +76,6 @@ spec:
     - fileName: CACert-MC-Master.yaml
       remediationAction: enforce
       policyName: "config-cluster-mgmt-ca-master"
-    - fileName: CACert-MC-Worker.yaml
-      remediationAction: enforce
-      policyName: "config-cluster-mgmt-ca-worker"
+#    - fileName: CACert-MC-Worker.yaml
+#      remediationAction: enforce
+#      policyName: "config-cluster-mgmt-ca-worker"
