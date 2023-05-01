@@ -32,3 +32,6 @@ spec:
     - fileName: ClusterVersionMgmt.yaml
       remediationAction: enforce
       policyName: "config-update-service"
+    - fileName: mgmtcluster-ca-bundle.yaml
+      remediationAction: enforce
+      policyName: "config-mgmtcluster-ca"
