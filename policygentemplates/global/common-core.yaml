@@ -23,18 +23,12 @@ spec:
     - fileName: imageContentSourcePolicyMgmt.yaml
       remediationAction: enforce
       policyName: "config-icsp"
-    - fileName: CACert-MC-Master.yaml
-      remediationAction: enforce
-      policyName: "config-cluster-mgmt-ca-master"
-#    - fileName: CACert-MC-Worker.yaml
-#      remediationAction: enforce
-#      policyName: "config-cluster-mgmt-ca-worker"
-    - fileName: ClusterVersionMgmt.yaml
-      remediationAction: enforce
-      policyName: "config-update-service"
     - fileName: mgmtcluster-ca-bundle.yaml
       remediationAction: enforce
       policyName: "config-mgmtcluster-ca"
     - fileName: mgmtcluster-to-proxy.yaml
       remediationAction: enforce
       policyName: "config-mgmtcluster-to-proxy"
+    - fileName: ClusterVersionMgmt.yaml
+      remediationAction: enforce
+      policyName: "config-update-service"
