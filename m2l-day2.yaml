@@ -14,6 +14,7 @@ spec:
   - common-core-config-cs
   - common-core-config-icsp
   - common-core-config-update-service
+  - common-core-config-mgmtcluster-to-proxy
   preCaching: false
   remediationStrategy:
     maxConcurrency: 1
