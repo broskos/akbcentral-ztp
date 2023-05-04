@@ -65,7 +65,8 @@ spec:
       policyName: "cnv-subscription"
     - fileName: CNV/CnvSubscription.yaml
       policyName: "cnv-subscription"
-    - fileName: CNV/CnvHyperConverged.yaml
-      policyName: "cnv-subscription"
       spec:
         source: mgmtcluster-operator-index
+    - fileName: CNV/CnvHyperConverged.yaml
+      policyName: "cnv-subscription"
+
