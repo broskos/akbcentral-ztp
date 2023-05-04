@@ -41,6 +41,8 @@ spec:
       policyName: "odf-subscription"
     - fileName: ODF/OdfSubscription.yaml
       policyName: "odf-subscription"
+      spec:
+        source: mgmtcluster-operator-index
 #    - fileName: ODF/OdfStorageCluster.yaml
 #      policyName: "odf-subscription"
 
@@ -52,6 +54,8 @@ spec:
       policyName: "pao-subscription"
     - fileName: PaoSubscription.yaml
       policyName: "pao-subscription"
+      spec:
+        source: mgmtcluster-operator-index
     - fileName: PAO/m2lcwl-master.yaml
       policyName: "pao-profile"
     - fileName: PAO/m2lcwl-worker.yaml
