@@ -1,11 +1,11 @@
 apiVersion: performance.openshift.io/v2
 kind: PerformanceProfile
 metadata:
-  name: profile1
+  name: master-pao
   annotations:
     ran.openshift.io/ztp-deploy-wave: "3"
     kubeletconfig.experimental: |
-      {"systemReserved": {"cpu": "2000m","memory": "16Gi"}}
+      {"systemReserved": {"cpu": "4000m","memory": "16Gi"}}
 spec:
   additionalKernelArgs:
   - "idle=poll"
@@ -13,24 +13,13 @@ spec:
      #
      # Include all CPUs not in the reserved list
      #
-    isolated: '3-55,59-111'
+    isolated: '4-31,36-63'
      #
      # House keeping CPUs. Calculated as:
      # number of IRQ / 220
      # where: number of IRQ = cat /proc/interrupts  | wc -l
-    reserved: '0-2,56-58'
-  hugepages:
-    defaultHugepagesSize: 1G
-    pages:
-      - size: 1G
-        count: 64
-        node: 0
-      - size: 1G
-        count: 64
-        node: 1
-  numa:
-    topologyPolicy: single-numa-node
+    reserved: '0-3,32-35'
   realTimeKernel:
     enabled: false
   nodeSelector:
-    node-role.kubernetes.io/profile1: ""
+    node-role.kubernetes.io/master: ""

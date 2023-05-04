@@ -29,13 +29,19 @@ spec:
     #
     # Label node for MCP
     #
-    #- fileName: LABEL/LabelNodeRole.yaml
-    #  policyName: "label-nodes"
-    #  metadata:
-    #    labels:
-    #      node-role.kubernetes.io/profile1: ""
-    #    name: worker151.m2lcwl.jnpr.bos2.lab
-    #
+    - fileName: LABEL/LabelNodeRole.yaml
+      policyName: "label-nodes"
+      metadata:
+        labels:
+          node-role.kubernetes.io/m2lcwl-worker: ""
+        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01.m2lcwl.etisalat-nfvi.local
+    - fileName: LABEL/LabelNodeRole.yaml
+      policyName: "label-nodes"
+      metadata:
+        labels:
+          node-role.kubernetes.io/m2lcwl-worker: ""
+        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02.m2lcwl.etisalat-nfvi.local
+
     # Enable log forwarding to kafka
     #
 #    - fileName: LOG/ClusterLogForwarder.yaml

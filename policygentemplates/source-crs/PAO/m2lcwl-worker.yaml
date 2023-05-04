@@ -1,11 +1,11 @@
 apiVersion: performance.openshift.io/v2
 kind: PerformanceProfile
 metadata:
-  name: master-pao
+  name: m2lcwl-worker
   annotations:
     ran.openshift.io/ztp-deploy-wave: "3"
     kubeletconfig.experimental: |
-      {"systemReserved": {"cpu": "4000m","memory": "16Gi"}}
+      {"systemReserved": {"cpu": "2000m","memory": "16Gi"}}
 spec:
   additionalKernelArgs:
   - "idle=poll"
@@ -13,13 +13,24 @@ spec:
      #
      # Include all CPUs not in the reserved list
      #
-    isolated: '4-55,60-111'
+    isolated: '4-35,40-71'
      #
      # House keeping CPUs. Calculated as:
      # number of IRQ / 220
      # where: number of IRQ = cat /proc/interrupts  | wc -l
-    reserved: '0-3,56-59'
+    reserved: '0-3,36-39'
+  hugepages:
+    defaultHugepagesSize: 1G
+    pages:
+      - size: 1G
+        count: 64
+        node: 0
+      - size: 1G
+        count: 64
+        node: 1
+  numa:
+    topologyPolicy: restricted
   realTimeKernel:
     enabled: false
   nodeSelector:
-    node-role.kubernetes.io/master: ""
+    node-role.kubernetes.io/m2lcwl-worker: ""

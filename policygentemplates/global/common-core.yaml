@@ -32,3 +32,38 @@ spec:
     - fileName: ClusterVersionMgmt.yaml
       remediationAction: enforce
       policyName: "config-update-service"
+
+    # ODF operator
+    #
+    - fileName: ODF/OdfNS.yaml
+      policyName: "odf-subscription"
+    - fileName: ODF/OdfOperGroup.yaml
+      policyName: "odf-subscription"
+    - fileName: ODF/OdfSubscription.yaml
+      policyName: "odf-subscription"
+    - fileName: ODF/OdfStorageCluster.yaml
+      policyName: "odf-subscription"
+
+    # PAO operator
+    #
+    - fileName: PaoSubscriptionNS.yaml
+      policyName: "pao-subscription"
+    - fileName: PaoSubscriptionOperGroup.yaml
+      policyName: "pao-subscription"
+    - fileName: PaoSubscription.yaml
+      policyName: "pao-subscription"
+    - fileName: PAO/m2lcwl-master.yaml
+      policyName: "pao-profile"
+    - fileName: PAO/pao-m2lcwl-worker.yaml
+      policyName: "pao-profile"
+    #
+    # CNV operator
+    #
+    - fileName: CNV/CnvNS.yaml
+      policyName: "cnv-subscription"
+    - fileName: CNV/CnvOperGroup.yaml
+      policyName: "cnv-subscription"
+    - fileName: CNV/CnvSubscription.yaml
+      policyName: "cnv-subscription"
+    - fileName: CNV/CnvHyperConverged.yaml
+      policyName: "cnv-subscription"

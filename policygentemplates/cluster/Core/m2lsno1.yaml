@@ -33,7 +33,7 @@ spec:
     #  policyName: "label-nodes"
     #  metadata:
     #    labels:
-    #      node-role.kubernetes.io/profile1: ""
+    #      node-role.kubernetes.io/m2lcwl-worker: ""
     #    name: worker151.m2lcwl.jnpr.bos2.lab
     #
     # Enable log forwarding to kafka
