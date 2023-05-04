@@ -8,7 +8,7 @@ metadata:
   labels:
     operators.coreos.com/servicemeshoperator.openshift-operators: ''
 spec:
-  source: redhat-operators
+  source: mgmtcluster-operator-index
   sourceNamespace: openshift-marketplace
   name: servicemeshoperator
   channel: "stable"

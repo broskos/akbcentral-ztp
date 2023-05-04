@@ -10,6 +10,6 @@ spec:
   channel: "stable-4.10"
   installPlanApproval: Manual
   name: odf-operator
-  source: redhat-operators  
+  source: mgmtcluster-operator-index
   sourceNamespace: openshift-marketplace
 

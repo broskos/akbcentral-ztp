@@ -41,8 +41,8 @@ spec:
       policyName: "odf-subscription"
     - fileName: ODF/OdfSubscription.yaml
       policyName: "odf-subscription"
-    - fileName: ODF/OdfStorageCluster.yaml
-      policyName: "odf-subscription"
+#    - fileName: ODF/OdfStorageCluster.yaml
+#      policyName: "odf-subscription"
 
     # PAO operator
     #

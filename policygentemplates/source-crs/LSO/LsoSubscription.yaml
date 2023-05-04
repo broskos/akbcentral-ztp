@@ -9,6 +9,6 @@ spec:
   channel: "4.10"
   installPlanApproval: Manual
   name: local-storage-operator
-  source: redhat-operators
+  source: mgmtcluster-operator-index
   sourceNamespace: openshift-marketplace
 

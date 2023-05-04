@@ -8,7 +8,7 @@ metadata:
   labels:
     operators.coreos.com/kiali-ossm.openshift-operators: ''
 spec:
-  source: redhat-operators
+  source: mgmtcluster-operator-index
   sourceNamespace: openshift-marketplace
   name: kiali-ossm
   channel: "stable"
