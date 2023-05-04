@@ -10,5 +10,4 @@ spec:
   sourceNamespace: openshift-marketplace
   name: kubevirt-hyperconverged
   channel: "stable"
-  installPlanApproval: Manual
----
+  installPlanApproval: Automatic
