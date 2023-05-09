@@ -10,6 +10,7 @@ generators:
 
 # Specific to the m2lcwl cluster
 - cluster/Core/m2lcwl.yaml
+- cluster/Core/akbcwl.yaml
 - cluster/Core/m2lsno1.yaml
 - cluster/Core/m2lsno2.yaml
 

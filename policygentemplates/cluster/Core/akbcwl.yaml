@@ -2,15 +2,14 @@
 apiVersion: ran.openshift.io/v1
 kind: PolicyGenTemplate
 metadata:
-  name: "m2lcwl"
+  name: "akbcwl"
   namespace: "policies-sub"
 spec:
   bindingRules:
     # These policies will correspond to all clusters with this label:
-    cluster: m2lcwl
+    cluster: akbcwl
   sourceFiles:
     # Create policies that will be installed only in a specific cluster
-
 
     # Masters Schedulable
     - fileName: mastersSchedulable.yaml
@@ -21,15 +20,15 @@ spec:
 #    - fileName: LABEL/LabelNodeOCS.yaml
 #      policyName: "label-nodes"
 #      metadata:
-#        name: master1.m2lcwl.jnpr.bos2.lab
+#        name: master1.akbcwl.jnpr.bos2.lab
 #    - fileName: LABEL/LabelNodeOCS.yaml
 #      policyName: "label-nodes"
 #      metadata:
-#        name: master2.m2lcwl.jnpr.bos2.lab
+#        name: master2.akbcwl.jnpr.bos2.lab
 #    - fileName: LABEL/LabelNodeOCS.yaml
 #      policyName: "label-nodes"
 #      metadata:
-#        name: master3.m2lcwl.jnpr.bos2.lab
+#        name: master3.akbcwl.jnpr.bos2.lab
     #
     # Label node for MCP
     #
@@ -37,14 +36,14 @@ spec:
       policyName: "label-nodes"
       metadata:
         labels:
-          node-role.kubernetes.io/m2lcwl-worker: ""
-        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
+          node-role.kubernetes.io/akbcwl-worker: ""
+        name: auh-akb02-nec-nfvi2-rk06-cisco-docpwrk01.etisalat-nfvi.local
     - fileName: LABEL/LabelNodeRole.yaml
       policyName: "label-nodes"
       metadata:
         labels:
-          node-role.kubernetes.io/m2lcwl-worker: ""
-        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02
+          node-role.kubernetes.io/akbcwl-worker: ""
+        name: auh-akb02-nec-nfvi2-rk07-cisco-docpwrk02.etisalat-nfvi.local
 
     # Enable log forwarding to kafka
     #
@@ -54,35 +53,35 @@ spec:
 #        outputs:
 #           - name: infra-logs
 #             type: kafka
-#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/m2lcwl-infra-logs
+#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/akbcwl-infra-logs
 #             secret:
 #               name: kafka-secret
 #           - name: audit-logs
 #             type: kafka
-#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/m2lcwl-audit-logs
+#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/akbcwl-audit-logs
 #             secret:
 #               name: kafka-secret
 #           - name: app-logs
 #             type: kafka
-#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/m2lcwl-app-logs
+#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/akbcwl-app-logs
 #             secret:
 #               name: kafka-secret
 #        pipelines:
-#          - name: m2lcwl-infra-logs
+#          - name: akbcwl-infra-logs
 #            inputRefs:
 #            - infrastructure
 #            outputRefs:
 #            - infra-logs
 #            labels:
 #              logType: "infra"
-#          - name: m2lcwl-audit-logs
+#          - name: akbcwl-audit-logs
 #            inputRefs:
 #            - audit
 #            outputRefs:
 #            - audit-logs
 #            labels:
 #              logType: "audit"
-#          - name: m2lcwl-app-logs
+#          - name: akbcwl-app-logs
 #            inputRefs:
 #            - application
 #            outputRefs:
@@ -103,4 +102,4 @@ spec:
 #              - name: KAFKA_BROKER_LIST
 #                value: mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443
 #              - name: KAFKA_TOPIC
-#                value: m2lcwl-ocp-metrics
+#                value: akbcwl-ocp-metrics
