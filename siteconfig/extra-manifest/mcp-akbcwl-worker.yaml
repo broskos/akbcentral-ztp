@@ -1,0 +1,14 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfigPool
+metadata:
+  name: akbcwl-worker
+  labels:
+    machineconfiguration.openshift.io/role: akbcwl-worker
+spec:
+  machineConfigSelector:
+    matchExpressions:
+      - {key: machineconfiguration.openshift.io/role, operator: In, values: [worker, akbcwl-worker]}
+  nodeSelector:
+    matchLabels:
+      node-role.kubernetes.io/akbcwl-worker: ""
+  pause: false

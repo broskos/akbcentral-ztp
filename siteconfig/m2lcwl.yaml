@@ -19,8 +19,7 @@ spec:
         include:
           - CS.yaml
           - ICSP.yaml
-          - mcp-profile1.yaml
-          - mcp-profile2.yaml
+          - mcp-m2lcwl-worker.yaml
     clusterLabels:
       core: true
       cluster: m2lcwl
