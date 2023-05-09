@@ -32,7 +32,9 @@ spec:
     - fileName: ClusterVersionMgmt.yaml
       remediationAction: enforce
       policyName: "config-update-service"
-
+    - fileName: allow-host-routing.yaml
+      remediationAction: enforce
+      policyName: "config-host-routing"
 
 
     # ODF operator
