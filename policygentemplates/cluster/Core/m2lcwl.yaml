@@ -34,13 +34,13 @@ spec:
       metadata:
         labels:
           node-role.kubernetes.io/m2lcwl-worker: ""
-        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01.m2lcwl.etisalat-nfvi.local
+        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
     - fileName: LABEL/LabelNodeRole.yaml
       policyName: "label-nodes"
       metadata:
         labels:
           node-role.kubernetes.io/m2lcwl-worker: ""
-        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02.m2lcwl.etisalat-nfvi.local
+        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02
 
     # Enable log forwarding to kafka
     #
