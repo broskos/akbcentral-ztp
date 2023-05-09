@@ -85,22 +85,22 @@ spec:
 
     # Logging
     - fileName: LOG/log-ns.yaml
-      remediationAction: inform
+      remediationAction: enforce
       policyName: logging
     # Logging
     - fileName: LOG/installES.yaml
-      remediationAction: inform
+      remediationAction: enforce
       policyName: logging
       spec:
         source: mgmtcluster-operator-index
     - fileName: LOG/installLO-group.yaml
-      remediationAction: inform
+      remediationAction: enforce
       policyName: logging
     - fileName: LOG/installLO.yaml
-      remediationAction: inform
+      remediationAction: enforce
       policyName: logging
       spec:
         source: mgmtcluster-operator-index
     - fileName: LOG/loggingConfig.yaml
-      remediationAction: inform
+      remediationAction: enforce
       policyName: logging
