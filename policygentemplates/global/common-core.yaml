@@ -91,6 +91,9 @@ spec:
       policyName: logging
       spec:
         source: mgmtcluster-operator-index
+    - fileName: LOG/installLO-group.yaml
+      remediationAction: inform
+      policyName: logging
     - fileName: LOG/installLO.yaml
       remediationAction: inform
       policyName: logging
