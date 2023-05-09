@@ -15,6 +15,7 @@ spec:
     # Masters Schedulable
     - fileName: mastersSchedulable.yaml
       policyName: "masters-schedulable"
+      remediationAction: enforce
     #
     # Label node for Storage
     #
@@ -35,12 +36,14 @@ spec:
     #
     - fileName: LABEL/LabelNodeRole.yaml
       policyName: "label-nodes"
+      remediationAction: enforce
       metadata:
         labels:
           node-role.kubernetes.io/m2lcwl-worker: ""
         name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
     - fileName: LABEL/LabelNodeRole.yaml
       policyName: "label-nodes"
+      remediationAction: enforce
       metadata:
         labels:
           node-role.kubernetes.io/m2lcwl-worker: ""
