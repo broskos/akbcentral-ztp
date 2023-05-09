@@ -9,7 +9,7 @@ metadata:
 data:
   config.yaml: |
     prometheus:
-      retention: 1d
+      retention: 3d
       volumeClaimTemplate:
         spec:
           storageClassName: ocs-storagecluster-ceph-rbd
@@ -18,7 +18,7 @@ data:
               storage: 20Gi
       enforcedSampleLimit: 50000
     thanosRuler:
-      retention: 1d
+      retention: 3d
       volumeClaimTemplate:
         spec:
           storageClassName: ocs-storagecluster-ceph-rbd

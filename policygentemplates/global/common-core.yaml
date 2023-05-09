@@ -33,6 +33,8 @@ spec:
       remediationAction: enforce
       policyName: "config-update-service"
 
+
+
     # ODF operator
     #
     - fileName: ODF/OdfNS.yaml
@@ -74,3 +76,26 @@ spec:
     - fileName: CNV/CnvHyperConverged.yaml
       policyName: "cnv-subscription"
 
+    # Monitoring persistent storage and user workload
+    - fileName: MON/UserWorkLoad.yaml
+      remediationAction: inform
+      policyName: monitoring
+
+    # Logging
+    - fileName: LOG/log-ns.yaml
+      remediationAction: inform
+      policyName: logging
+    # Logging
+    - fileName: LOG/installES.yaml
+      remediationAction: inform
+      policyName: logging
+      spec:
+        source: mgmtcluster-operator-index
+    - fileName: LOG/installLO.yaml
+      remediationAction: inform
+      policyName: logging
+      spec:
+        source: mgmtcluster-operator-index
+    - fileName: LOG/loggingConfig.yaml
+      remediationAction: inform
+      policyName: logging
