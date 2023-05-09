@@ -80,7 +80,7 @@ spec:
 
     # Monitoring persistent storage and user workload
     - fileName: MON/UserWorkLoad.yaml
-      remediationAction: inform
+      remediationAction: enforce
       policyName: monitoring
 
     # Logging
