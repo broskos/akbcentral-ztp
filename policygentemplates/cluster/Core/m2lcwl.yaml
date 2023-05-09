@@ -41,7 +41,7 @@ spec:
 #        labels:
 #          node-role.kubernetes.io/m2lcwl-worker: ""
 #        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
-        node: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
+        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
         role: booger
     - fileName: LABEL/LabelNodeRole.yaml
       policyName: "label-nodes"
@@ -50,7 +50,7 @@ spec:
 #        labels:
 #          node-role.kubernetes.io/m2lcwl-worker: ""
 #        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02
-        node: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02
+        name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02
         role: booger
 
     # Enable log forwarding to kafka
