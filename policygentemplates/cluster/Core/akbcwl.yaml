@@ -52,3 +52,4 @@ spec:
       policyName: "pao-profile"
     - fileName: PAO/akbcwl-worker.yaml
       policyName: "pao-profile"
+      remediationAction: enforce

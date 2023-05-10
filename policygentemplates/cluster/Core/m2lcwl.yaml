@@ -49,3 +49,4 @@ spec:
       policyName: "pao-profile"
     - fileName: PAO/m2lcwl-worker.yaml
       policyName: "pao-profile"
+      remediationAction: enforce

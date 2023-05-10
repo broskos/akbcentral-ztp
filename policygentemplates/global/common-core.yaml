@@ -47,6 +47,7 @@ spec:
       policyName: "odf-subscription"
       spec:
         source: mgmtcluster-operator-index
+      remediationAction: enforce
 #    - fileName: ODF/OdfStorageCluster.yaml
 #      policyName: "odf-subscription"
 
@@ -58,6 +59,7 @@ spec:
       policyName: "pao-subscription"
     - fileName: PaoSubscription.yaml
       policyName: "pao-subscription"
+      remediationAction: enforce
       spec:
         source: mgmtcluster-operator-index
 
@@ -74,6 +76,7 @@ spec:
         source: mgmtcluster-operator-index
     - fileName: CNV/CnvHyperConverged.yaml
       policyName: "cnv-subscription"
+      remediationAction: enforce
 
     # Monitoring persistent storage and user workload
     - fileName: MON/UserWorkLoad.yaml
