@@ -2,17 +2,20 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: user-workload-monitoring-config
-  namespace: openshift-user-workload-monitoring
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
   annotations:
     ran.openshift.io/ztp-deploy-wave: "2"
 data:
   config.yaml: |
+    enableUserWorkload: true   
+    alertmanagerMain:
+      enableUserAlertmanagerConfig: true    
     prometheus:
       retention: 3d
       volumeClaimTemplate:
         spec:
-          storageClassName: ocs-storagecluster-ceph-rbd
+          storageClassName: ocs-external-storagecluster-ceph-rbd
           resources:
             requests:
               storage: 20Gi
@@ -21,8 +24,8 @@ data:
       retention: 3d
       volumeClaimTemplate:
         spec:
-          storageClassName: ocs-storagecluster-ceph-rbd
+          storageClassName: ocs-external-storagecluster-ceph-rbd
           resources:
             requests:
               storage: 20Gi
-
+              
