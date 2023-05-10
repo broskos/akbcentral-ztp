@@ -70,7 +70,7 @@ spec:
       policyName: sriov-policy
     - fileName: SriovSubscription.yaml
       policyName: sriov-policy
-
+      remediationAction: enforce
 
     #
     # CNV operator
