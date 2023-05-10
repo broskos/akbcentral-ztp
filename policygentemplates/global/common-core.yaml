@@ -79,6 +79,9 @@ spec:
       remediationAction: enforce
 
     # Monitoring persistent storage and user workload
+    - fileName: MON/OcpMonitoring.yaml
+      remediationAction: enforce
+      policyName: monitoring
     - fileName: MON/UserWorkLoad.yaml
       remediationAction: enforce
       policyName: monitoring
