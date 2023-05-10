@@ -72,7 +72,7 @@ spec:
       policyName: sriov-policy
       remediationAction: enforce
       spec:
-      source: mgmtcluster-operator-index
+        source: mgmtcluster-operator-index
 
     #
     # CNV operator
