@@ -34,7 +34,7 @@ spec:
     #
     # Label node for MCP
     #
-    - fileName: LABEL/LabelNodeRole.yaml
+    - fileName: LABEL/LabelNodeRoleM2l.yaml
       policyName: "label-nodes"
       remediationAction: enforce
       metadata:
