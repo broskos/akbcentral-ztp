@@ -48,61 +48,7 @@ spec:
           node-role.kubernetes.io/akbcwl-worker: ""
         name: auh-akb02-nec-nfvi2-rk07-cisco-docpwrk02.etisalat-nfvi.local
 
-    # Enable log forwarding to kafka
-    #
-#    - fileName: LOG/ClusterLogForwarder.yaml
-#      policyName: "log-forwarder"
-#      spec:
-#        outputs:
-#           - name: infra-logs
-#             type: kafka
-#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/akbcwl-infra-logs
-#             secret:
-#               name: kafka-secret
-#           - name: audit-logs
-#             type: kafka
-#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/akbcwl-audit-logs
-#             secret:
-#               name: kafka-secret
-#           - name: app-logs
-#             type: kafka
-#             url: tls://mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443/akbcwl-app-logs
-#             secret:
-#               name: kafka-secret
-#        pipelines:
-#          - name: akbcwl-infra-logs
-#            inputRefs:
-#            - infrastructure
-#            outputRefs:
-#            - infra-logs
-#            labels:
-#              logType: "infra"
-#          - name: akbcwl-audit-logs
-#            inputRefs:
-#            - audit
-#            outputRefs:
-#            - audit-logs
-#            labels:
-#              logType: "audit"
-#          - name: akbcwl-app-logs
-#            inputRefs:
-#            - application
-#            outputRefs:
-#            - app-logs
-#            labels:
-#              logType: "app"
- 
-    #
-    # Deploy Prometheus Kafka Adapter
-    #
-#    - fileName: MON/kafkaAdapDeployment.yaml
-#      policyName: "dply-prom-kafka-adapter"
-#      spec:
-#        template:
-#          spec:
-#            containers:
-#            - env:
-#              - name: KAFKA_BROKER_LIST
-#                value: mgnt-kafka-kafka-bootstrap-kafka-cluster.apps.mano-npss.jnpr.bos2.lab:443
-#              - name: KAFKA_TOPIC
-#                value: akbcwl-ocp-metrics
+    - fileName: PAO/akbcwl-master.yaml
+      policyName: "pao-profile"
+    - fileName: PAO/akbcwl-worker.yaml
+      policyName: "pao-profile"

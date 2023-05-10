@@ -1,0 +1,36 @@
+apiVersion: performance.openshift.io/v2
+kind: PerformanceProfile
+metadata:
+  name: akbcwl-worker
+  annotations:
+    ran.openshift.io/ztp-deploy-wave: "3"
+    kubeletconfig.experimental: |
+      {"systemReserved": {"cpu": "2000m","memory": "16Gi"}}
+spec:
+  additionalKernelArgs:
+  - "idle=poll"
+  cpu:
+     #
+     # Include all CPUs not in the reserved list
+     #
+    isolated: '2-17,38-53,20-35,56-71'
+     #
+     # House keeping CPUs. Calculated as:
+     # number of IRQ / 220
+     # where: number of IRQ = cat /proc/interrupts  | wc -l
+    reserved: '0,1,36,37,18,19,54,55'
+  hugepages:
+    defaultHugepagesSize: 1G
+    pages:
+      - size: 1G
+        count: 64
+        node: 0
+      - size: 1G
+        count: 64
+        node: 1
+  numa:
+    topologyPolicy: restricted
+  realTimeKernel:
+    enabled: false
+  nodeSelector:
+    node-role.kubernetes.io/akbcwl-worker: ""
