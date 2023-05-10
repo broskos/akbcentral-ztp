@@ -39,13 +39,13 @@ spec:
       remediationAction: enforce
       metadata:
         name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01.m2lcwl.etisalat-nfvi.local
-        role: node-role.kubernetes.io/booger: ""
+        role: 'node-role.kubernetes.io/booger: ""'
     - fileName: LABEL/LabelNodeRole.yaml
       policyName: "label-nodes"
       remediationAction: enforce
       metadata:
         name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk02.m2lcwl.etisalat-nfvi.local
-        role: node-role.kubernetes.io/booger: ""
+        role: 'node-role.kubernetes.io/booger: ""'
     # Enable log forwarding to kafka
     #
 #    - fileName: LOG/ClusterLogForwarder.yaml
