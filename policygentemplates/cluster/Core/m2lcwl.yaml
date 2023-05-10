@@ -50,3 +50,9 @@ spec:
     - fileName: PAO/m2lcwl-worker.yaml
       policyName: "pao-profile"
       remediationAction: enforce
+
+    - fileName: QUAY/quayInstance.yaml
+      policyName: "quay-instance"
+      metadata:
+        name: m2lcwl-registry
+      remediationAction: enforce

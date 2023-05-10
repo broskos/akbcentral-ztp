@@ -74,6 +74,16 @@ spec:
       spec:
         source: mgmtcluster-operator-index
 
+    # QUAY
+    - fileName: QUAY/quayNS.yaml
+      policyName: quay-oper-policy
+    - fileName: QUAY/quayOG.yaml
+      policyName: quay-oper-policy
+    - fileName: QUAY/quaySub.yaml
+      policyName: quay-oper-policy
+      remediationAction: enforce
+      spec:
+        source: mgmtcluster-operator-index
     #
     # CNV operator
     #
