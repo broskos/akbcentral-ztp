@@ -41,7 +41,7 @@ spec:
         labels:
           node-role.kubernetes.io/m2lcwl-worker: ""
         name: auh-m2l00-nec-nfvi2-rk01-dell-docpwrk01
-    - fileName: LABEL/LabelNodeRole.yaml
+    - fileName: LABEL/LabelNodeRoleM2l.yaml
       policyName: "label-nodes"
       remediationAction: enforce
       metadata:
