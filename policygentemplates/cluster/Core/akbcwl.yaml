@@ -58,4 +58,4 @@ spec:
       policyName: "quay-instance"
       metadata:
         name: akbcwl-registry
-      remediationAction: enforce`
+      remediationAction: enforce
