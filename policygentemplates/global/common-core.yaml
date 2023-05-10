@@ -63,6 +63,15 @@ spec:
       spec:
         source: mgmtcluster-operator-index
 
+    # SRIOV
+    - fileName: SriovSubscriptionNS.yaml
+      policyName: sriov-policy
+    - fileName: SriovSubscriptionOperGroup.yaml
+      policyName: sriov-policy
+    - fileName: SriovSubscription.yaml
+      policyName: sriov-policy
+
+
     #
     # CNV operator
     #
