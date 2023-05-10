@@ -5,7 +5,5 @@ metadata:
   labels:
     node-role.kubernetes.io/booger: ""
   name: $name
-  annotations:
-    ran.openshift.io/ztp-deploy-wave: "1"
-spec: {}
+
 
