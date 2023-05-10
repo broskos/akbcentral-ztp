@@ -19,6 +19,17 @@ spec:
      # number of IRQ / 220
      # where: number of IRQ = cat /proc/interrupts  | wc -l
     reserved: '0,1,56,57,28,29,84,85'
+  hugepages:
+    defaultHugepagesSize: 1G
+    pages:
+      - size: 1G
+        count: 128
+        node: 0
+      - size: 1G
+        count: 128
+        node: 1
+  numa:
+    topologyPolicy: best-effort
   realTimeKernel:
     enabled: false
   nodeSelector:

@@ -1,4 +1,4 @@
----
+`---
 apiVersion: ran.openshift.io/v1
 kind: PolicyGenTemplate
 metadata:
@@ -33,14 +33,14 @@ spec:
     #
     # Label node for MCP
     #
-    - fileName: LABEL/LabelNodeRole.yaml
+    - fileName: LABEL/LabelNodeRoleAkb.yaml
       policyName: "label-nodes"
       remediationAction: enforce
       metadata:
         labels:
           node-role.kubernetes.io/akbcwl-worker: ""
         name: auh-akb02-nec-nfvi2-rk06-cisco-docpwrk01.etisalat-nfvi.local
-    - fileName: LABEL/LabelNodeRole.yaml
+    - fileName: LABEL/LabelNodeRoleAkb.yaml
       policyName: "label-nodes"
       remediationAction: enforce
       metadata:
@@ -58,4 +58,4 @@ spec:
       policyName: "quay-instance"
       metadata:
         name: akbcwl-registry
-      remediationAction: enforce
+      remediationAction: enforce`
