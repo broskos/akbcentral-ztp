@@ -71,6 +71,8 @@ spec:
     - fileName: SriovSubscription.yaml
       policyName: sriov-policy
       remediationAction: enforce
+      spec:
+      source: mgmtcluster-operator-index
 
     #
     # CNV operator
