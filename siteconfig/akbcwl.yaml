@@ -188,9 +188,10 @@ spec:
         role: "master"    
         # bmcAddress: "idrac-virtualmedia+https://auh-akb00-nec-nfvi2-rk02-dell-sdn02.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
         # bmcAddress: "idrac-virtualmedia+https://10.179.228.14/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "redfish-virtualmedia+https://10.179.245.198/redfish/v1/Systems/WZP2423131L"
         bmcCredentialsName:
            name: "bmh-docpmas02-secret"
-        bmcAddress: "redfish-virtualmedia+https://10.179.245.198/redfish/v1/Systems/WZP2423131L"
+        # bmcAddress: "redfish-virtualmedia+https://10.179.245.198/redfish/v1/Systems/WZP2423131L"
         # username: necadmin
         # password: 1899KunihikoIwadare
         # disableCertificateVerification: True
@@ -309,12 +310,9 @@ spec:
                   next-hop-interface: bond0.2035
       - hostName: "auh-akb02-nec-nfvi2-rk10-cisco-docpmas03"
         role: "master"
-#        bmcAddress: "idrac-virtualmedia+https://auh-akb00-nec-nfvi2-rk03-dell-sdn03.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+        # bmcAddress: "idrac-virtualmedia+https://auh-akb00-nec-nfvi2-rk03-dell-sdn03.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
         #bmcAddress: "idrac-virtualmedia+https://10.179.228.15/redfish/v1/Systems/System.Embedded.1"
-        # bmcAddress: "redfish-virtualmedia+https://10.179.245.199/redfish/v1/Systems/WZP242312ZC"
-        # username: necadmin
-        # password: 1899KunihikoIwadare
-        # disableCertificateVerification: True
+        bmcAddress: "redfish-virtualmedia+https://10.179.245.199/redfish/v1/Systems/WZP242312ZC"
         bmcCredentialsName:
           name: "bmh-docpmas03-secret"    
         bootMACAddress: "BC:4A:56:3A:F6:8E"
