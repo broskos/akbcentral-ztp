@@ -59,13 +59,13 @@ spec:
         # depends on hw server model
         # EXAMPLE DELL SERVER // bmcAddress: "redfish-virtualmedia+https://10.179.245.197/redfish/v1/Systems/System.Embedded.1"
         bmcAddress: "redfish-virtualmedia+https://10.179.245.197/redfish/v1/Systems/WZP24231310"
-        username: necadmin
-        password: 1899KunihikoIwadare
-        disableCertificateVerification: True
+        # username: necadmin
+        # password: 1899KunihikoIwadare
+        # disableCertificateVerification: True
         # we need to create the credentials
         # replaced by username/password  
-        #bmcCredentialsName:
-        #  name: "bmh-docpmas01-secret"
+        bmcCredentialsName:
+          name: "bmh-docpmas01-secret"
 
         bootMACAddress: "3C:13:CC:46:3B:58"
 
@@ -196,12 +196,12 @@ spec:
         role: "master"    
         # bmcAddress: "idrac-virtualmedia+https://auh-akb00-nec-nfvi2-rk02-dell-sdn02.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
         # bmcAddress: "idrac-virtualmedia+https://10.179.228.14/redfish/v1/Systems/System.Embedded.1"
-        # bmcCredentialsName:
-        #   name: "bmh-docpmas02-secret"
+        bmcCredentialsName:
+           name: "bmh-docpmas02-secret"
         bmcAddress: "redfish-virtualmedia+https://10.179.245.198/redfish/v1/Systems/WZP2423131L"
-        username: necadmin
-        password: 1899KunihikoIwadare
-        disableCertificateVerification: True
+        # username: necadmin
+        # password: 1899KunihikoIwadare
+        # disableCertificateVerification: True
 
         bootMACAddress: "3C:13:CC:32:C6:80"
         # Use UEFISecureBoot to enable secure boot for this node
@@ -321,12 +321,12 @@ spec:
         role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-akb00-nec-nfvi2-rk03-dell-sdn03.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
         #bmcAddress: "idrac-virtualmedia+https://10.179.228.15/redfish/v1/Systems/System.Embedded.1"
-        bmcAddress: "redfish-virtualmedia+https://10.179.245.199/redfish/v1/Systems/WZP242312ZC"
-        username: necadmin
-        password: 1899KunihikoIwadare
-        disableCertificateVerification: True
-        #bmcCredentialsName:
-        #  name: "bmh-docpmas03-secret"    
+        # bmcAddress: "redfish-virtualmedia+https://10.179.245.199/redfish/v1/Systems/WZP242312ZC"
+        # username: necadmin
+        # password: 1899KunihikoIwadare
+        # disableCertificateVerification: True
+        bmcCredentialsName:
+          name: "bmh-docpmas03-secret"    
         bootMACAddress: "BC:4A:56:3A:F6:8E"
       # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
@@ -445,8 +445,8 @@ spec:
       #   role: "worker"
       #   # bmcAddress: "idrac-virtualmedia+https://auh-akb00-nec-nfvi2-rk03-dell-comp05.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
       #   # bmcAddress: "idrac-virtualmedia+https://10.179.229.5/redfish/v1/Systems/System.Embedded.1"
-      #   #bmcCredentialsName:
-      #   #  name: "bmh-docpwrk01-secret"
+      #   bmcCredentialsName:
+      #     name: "bmh-docpwrk01-secret"
         
       #   bmcAddress: "redfish-virtualmedia+https://10.179.245.205/redfish/v1/Systems/WZP233411MZ"
       #   username: necadmin
