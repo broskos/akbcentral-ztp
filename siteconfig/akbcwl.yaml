@@ -37,7 +37,7 @@ spec:
     serviceNetwork:
       - 172.30.0.0/16
       # - 1001:2::/112
-    additionalNTPSources: ##from dbastion in akb
+    additionalNTPSources:
       - 10.179.248.86
       # - 1111:2222:3333:4444::2
     # Optionally; This can be used to override the KlusterletAddonConfig that is created for this cluster:
@@ -175,11 +175,10 @@ spec:
                   metric: 100
                   next-hop-address: 10.179.255.254
                   next-hop-interface: bond0.2035
-
       - hostName: "auh-akb02-nec-nfvi2-rk10-cisco-docpmas02"
         role: "master"    
         bmcCredentialsName:
-           name: "bmh-docpmas02-secret"
+          name: "bmh-docpmas02-secret"
         bmcAddress: "redfish-virtualmedia+https://10.179.245.198/redfish/v1/Systems/WZP2423131L"
         bootMACAddress: "3C:13:CC:32:C6:80"
         # Use UEFISecureBoot to enable secure boot for this node
@@ -412,240 +411,240 @@ spec:
                   metric: 100
                   next-hop-address: 10.179.255.254
                   next-hop-interface: bond0.2035
-      - hostName: "auh-akb02-nec-nfvi2-rk06-cisco-docpwrk01"
-        role: "worker"
-        bmcAddress: "redfish-virtualmedia+https://10.179.245.205/redfish/v1/Systems/WZP233411MZ"        
-        bmcCredentialsName:
-          name: "bmh-docpwrk01-secret" 
-        bootMACAddress: "B4:96:91:5B:D1:B0"
-      # Use UEFISecureBoot to enable secure boot for this node
-        bootMode: "legacy"
-        rootDeviceHints:
-          deviceName: "/dev/sda"
-        nodeNetwork:
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/2.1
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/2.2
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/4.1
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/4.2
-          interfaces:
-            - name: "ens2f0"
-              macAddress: "3c:fd:fe:de:3b:90"
-            - name: "ens2f1"
-              macAddress: "3c:fd:fe:de:3b:91"
-            - name: "ens4f0"
-              macAddress: "3c:fd:fe:de:3f:30"
-            - name: "ens4f1"
-              macAddress: "3c:fd:fe:de:3f:31"
-          config:
-            interfaces:
-              - name: bond0
-                description: Bond0
-                type: bond
-                state: up
-                ipv4:
-                  enabled: false
-                  dhcp: false
-                link-aggregation:
-                  mode: '802.3ad'
-                  options:
-                    miimon: '100'
-                    xmit_hash_policy: 'layer3+4'
-                    lacp_rate: fast
-                    updelay: '200'
-                  port:
-                    - ens2f0
-                    - ens4f1
-              - name: ens2f0
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: ens4f1
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: bond0.2035
-                state: up
-                type: vlan
-                vlan:
-                  base-iface: bond0
-                  id: 2035
-                ipv4:
-                  enabled: true
-                  dhcp: false
-                  address:
-                  - ip: 10.179.255.74
-                    prefix-length: 23
-              - name: bond1
-                description: Bond1
-                type: bond
-                state: up
-                ipv4:
-                  enabled: false
-                  dhcp: false
-                link-aggregation:
-                  mode: '802.3ad'
-                  options:
-                    miimon: '100'
-                    xmit_hash_policy: 'layer3+4'
-                    lacp_rate: fast
-                    updelay: '200'
-                  port:
-                    - ens2f1
-                    - ens4f0
-              - name: ens2f1
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: ens4f0
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: bond1.3019
-                state: up
-                type: vlan
-                vlan:
-                  base-iface: bond1
-                  id: 3019
-                ipv4:
-                  enabled: true
-                  address:
-                  - ip: 172.16.46.74
-                    prefix-length: 22
-            dns-resolver:
-              config:
-                server:
-                  - 10.179.249.86
-                  - 10.179.249.87
-            routes:
-              config:
-                - destination: 0.0.0.0/0
-                  metric: 100
-                  next-hop-address: 10.179.255.254
-                  next-hop-interface: bond0.2035
-      - hostName: "auh-akb02-nec-nfvi2-rk07-cisco-docpwrk02"
-        role: "worker"
-        bmcAddress: "redfish-virtualmedia+https://10.179.245.206/redfish/v1/Systems/WZP234404HD"
-        bmcCredentialsName:
-          name: "bmh-docpwrk02-secret"
-        bootMACAddress: "B4:96:91:63:0C:94"
-      # Use UEFISecureBoot to enable secure boot for this node
-        bootMode: "legacy"
-        rootDeviceHints:
-          deviceName: "/dev/sda"
-        nodeNetwork:
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/2.1
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/2.2
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/4.1
-          # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/4.2
-          interfaces:
-            - name: "ens2f0"
-              macAddress: "3c:fd:fe:e0:bd:18"
-            - name: "ens2f1"
-              macAddress: "3c:fd:fe:e0:bd:19"
-            - name: "ens4f0"
-              macAddress: "3c:fd:fe:e0:bb:64"
-            - name: "ens4f1"
-              macAddress: "3c:fd:fe:e0:bb:65"
-          config:
-            interfaces:
-              - name: bond0
-                description: Bond0
-                type: bond
-                state: up
-                ipv4:
-                  enabled: false
-                  dhcp: false
-                link-aggregation:
-                  mode: '802.3ad'
-                  options:
-                    miimon: '100'
-                    xmit_hash_policy: 'layer3+4'
-                    lacp_rate: fast
-                    updelay: '200'
-                  port:
-                    - ens2f0
-                    - ens4f1
-              - name: ens2f0
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: ens4f1
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: bond0.2035
-                state: up
-                type: vlan
-                vlan:
-                  base-iface: bond0
-                  id: 2035
-                ipv4:
-                  enabled: true
-                  dhcp: false
-                  address:
-                  - ip: 10.179.255.75
-                    prefix-length: 23
-              - name: bond1
-                description: Bond1
-                type: bond
-                state: up
-                ipv4:
-                  enabled: false
-                  dhcp: false
-                link-aggregation:
-                  mode: '802.3ad'
-                  options:
-                    miimon: '100'
-                    xmit_hash_policy: 'layer3+4'
-                    lacp_rate: fast
-                    updelay: '200'
-                  port:
-                    - ens2f1
-                    - ens4f0
-              - name: ens2f1
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: ens4f0
-                state: up
-                mtu: 9000
-                type: ethernet
-                ipv4:
-                  enabled: false
-              - name: bond1.3019
-                state: up
-                type: vlan
-                vlan:
-                  base-iface: bond1
-                  id: 3019
-                ipv4:
-                  enabled: true
-                  dhcp: false
-                  address:
-                  - ip: 172.16.46.75
-                    prefix-length: 22
-            dns-resolver:
-              config:
-                server:
-                  - 10.179.249.86
-                  - 10.179.249.87
-            routes:
-              config:
-                - destination: 0.0.0.0/0
-                  metric: 100
-                  next-hop-address: 10.179.255.254
-                  next-hop-interface: bond0.2035
+      # - hostName: "auh-akb02-nec-nfvi2-rk06-cisco-docpwrk01"
+      #   role: "worker"
+      #   bmcAddress: "redfish-virtualmedia+https://10.179.245.205/redfish/v1/Systems/WZP233411MZ"        
+      #   bmcCredentialsName:
+      #     name: "bmh-docpwrk01-secret" 
+      #   bootMACAddress: "B4:96:91:5B:D1:B0"
+      # # Use UEFISecureBoot to enable secure boot for this node
+      #   bootMode: "legacy"
+      #   rootDeviceHints:
+      #     deviceName: "/dev/sda"
+      #   nodeNetwork:
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/2.1
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/2.2
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/4.1
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/4.2
+      #     interfaces:
+      #       - name: "ens2f0"
+      #         macAddress: "3c:fd:fe:de:3b:90"
+      #       - name: "ens2f1"
+      #         macAddress: "3c:fd:fe:de:3b:91"
+      #       - name: "ens4f0"
+      #         macAddress: "3c:fd:fe:de:3f:30"
+      #       - name: "ens4f1"
+      #         macAddress: "3c:fd:fe:de:3f:31"
+      #     config:
+      #       interfaces:
+      #         - name: bond0
+      #           description: Bond0
+      #           type: bond
+      #           state: up
+      #           ipv4:
+      #             enabled: false
+      #             dhcp: false
+      #           link-aggregation:
+      #             mode: '802.3ad'
+      #             options:
+      #               miimon: '100'
+      #               xmit_hash_policy: 'layer3+4'
+      #               lacp_rate: fast
+      #               updelay: '200'
+      #             port:
+      #               - ens2f0
+      #               - ens4f1
+      #         - name: ens2f0
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: ens4f1
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: bond0.2035
+      #           state: up
+      #           type: vlan
+      #           vlan:
+      #             base-iface: bond0
+      #             id: 2035
+      #           ipv4:
+      #             enabled: true
+      #             dhcp: false
+      #             address:
+      #             - ip: 10.179.255.74
+      #               prefix-length: 23
+      #         - name: bond1
+      #           description: Bond1
+      #           type: bond
+      #           state: up
+      #           ipv4:
+      #             enabled: false
+      #             dhcp: false
+      #           link-aggregation:
+      #             mode: '802.3ad'
+      #             options:
+      #               miimon: '100'
+      #               xmit_hash_policy: 'layer3+4'
+      #               lacp_rate: fast
+      #               updelay: '200'
+      #             port:
+      #               - ens2f1
+      #               - ens4f0
+      #         - name: ens2f1
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: ens4f0
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: bond1.3019
+      #           state: up
+      #           type: vlan
+      #           vlan:
+      #             base-iface: bond1
+      #             id: 3019
+      #           ipv4:
+      #             enabled: true
+      #             address:
+      #             - ip: 172.16.46.74
+      #               prefix-length: 22
+      #       dns-resolver:
+      #         config:
+      #           server:
+      #             - 10.179.249.86
+      #             - 10.179.249.87
+      #       routes:
+      #         config:
+      #           - destination: 0.0.0.0/0
+      #             metric: 100
+      #             next-hop-address: 10.179.255.254
+      #             next-hop-interface: bond0.2035
+      # - hostName: "auh-akb02-nec-nfvi2-rk07-cisco-docpwrk02"
+      #   role: "worker"
+      #   bmcAddress: "redfish-virtualmedia+https://10.179.245.206/redfish/v1/Systems/WZP234404HD"
+      #   bmcCredentialsName:
+      #     name: "bmh-docpwrk02-secret"
+      #   bootMACAddress: "B4:96:91:63:0C:94"
+      # # Use UEFISecureBoot to enable secure boot for this node
+      #   bootMode: "legacy"
+      #   rootDeviceHints:
+      #     deviceName: "/dev/sda"
+      #   nodeNetwork:
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/2.1
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/2.2
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/4.1
+      #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/4.2
+      #     interfaces:
+      #       - name: "ens2f0"
+      #         macAddress: "3c:fd:fe:e0:bd:18"
+      #       - name: "ens2f1"
+      #         macAddress: "3c:fd:fe:e0:bd:19"
+      #       - name: "ens4f0"
+      #         macAddress: "3c:fd:fe:e0:bb:64"
+      #       - name: "ens4f1"
+      #         macAddress: "3c:fd:fe:e0:bb:65"
+      #     config:
+      #       interfaces:
+      #         - name: bond0
+      #           description: Bond0
+      #           type: bond
+      #           state: up
+      #           ipv4:
+      #             enabled: false
+      #             dhcp: false
+      #           link-aggregation:
+      #             mode: '802.3ad'
+      #             options:
+      #               miimon: '100'
+      #               xmit_hash_policy: 'layer3+4'
+      #               lacp_rate: fast
+      #               updelay: '200'
+      #             port:
+      #               - ens2f0
+      #               - ens4f1
+      #         - name: ens2f0
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: ens4f1
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: bond0.2035
+      #           state: up
+      #           type: vlan
+      #           vlan:
+      #             base-iface: bond0
+      #             id: 2035
+      #           ipv4:
+      #             enabled: true
+      #             dhcp: false
+      #             address:
+      #             - ip: 10.179.255.75
+      #               prefix-length: 23
+      #         - name: bond1
+      #           description: Bond1
+      #           type: bond
+      #           state: up
+      #           ipv4:
+      #             enabled: false
+      #             dhcp: false
+      #           link-aggregation:
+      #             mode: '802.3ad'
+      #             options:
+      #               miimon: '100'
+      #               xmit_hash_policy: 'layer3+4'
+      #               lacp_rate: fast
+      #               updelay: '200'
+      #             port:
+      #               - ens2f1
+      #               - ens4f0
+      #         - name: ens2f1
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: ens4f0
+      #           state: up
+      #           mtu: 9000
+      #           type: ethernet
+      #           ipv4:
+      #             enabled: false
+      #         - name: bond1.3019
+      #           state: up
+      #           type: vlan
+      #           vlan:
+      #             base-iface: bond1
+      #             id: 3019
+      #           ipv4:
+      #             enabled: true
+      #             dhcp: false
+      #             address:
+      #             - ip: 172.16.46.75
+      #               prefix-length: 22
+      #       dns-resolver:
+      #         config:
+      #           server:
+      #             - 10.179.249.86
+      #             - 10.179.249.87
+      #       routes:
+      #         config:
+      #           - destination: 0.0.0.0/0
+      #             metric: 100
+      #             next-hop-address: 10.179.255.254
+      #             next-hop-interface: bond0.2035
