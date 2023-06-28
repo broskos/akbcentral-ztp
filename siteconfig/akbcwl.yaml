@@ -60,7 +60,7 @@ spec:
           deviceName: "/dev/sde"
 # As per: https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-talm-for-cluster-upgrades.html#cnf-about-topology-aware-lifecycle-manager-config_cnf-topology-aware-lifecycle-manager
         diskPartition:
-          - device: /dev/sda
+          - device: /dev/sde
             partitions:
             - mount_point: /var/recovery
               size: 51200
@@ -420,7 +420,7 @@ spec:
       # # Use UEFISecureBoot to enable secure boot for this node
       #   bootMode: "legacy"
       #   rootDeviceHints:
-      #     deviceName: "/dev/sda"
+      #     deviceName: "/dev/sde"
       #   nodeNetwork:
       #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/2.1
       #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.205/redfish/v1/Systems/WZP233411MZ/EthernetInterfaces/2.2
@@ -538,7 +538,7 @@ spec:
       # # Use UEFISecureBoot to enable secure boot for this node
       #   bootMode: "legacy"
       #   rootDeviceHints:
-      #     deviceName: "/dev/sda"
+      #     deviceName: "/dev/sde"
       #   nodeNetwork:
       #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/2.1
       #     # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.206/redfish/v1/Systems/WZP234404HD/EthernetInterfaces/2.2
