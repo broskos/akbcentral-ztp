@@ -57,7 +57,7 @@ spec:
         # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
-          deviceName: "/dev/sda"
+          deviceName: "/dev/sde"
 # As per: https://docs.openshift.com/container-platform/4.11/scalability_and_performance/cnf-talm-for-cluster-upgrades.html#cnf-about-topology-aware-lifecycle-manager-config_cnf-topology-aware-lifecycle-manager
         diskPartition:
           - device: /dev/sda
@@ -184,7 +184,7 @@ spec:
         # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
-          deviceName: "/dev/sda"
+          deviceName: "/dev/sde"
         nodeNetwork:
           # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.198/redfish/v1/Systems/WZP2423131L/EthernetInterfaces/2.1
           # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.198/redfish/v1/Systems/WZP2423131L/EthernetInterfaces/2.2
@@ -302,7 +302,7 @@ spec:
       # Use UEFISecureBoot to enable secure boot for this node
         bootMode: "legacy"
         rootDeviceHints:
-          deviceName: "/dev/sda"
+          deviceName: "/dev/sde"
         nodeNetwork:
           # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.199/redfish/v1/Systems/WZP242312ZC/EthernetInterfaces/2.1
           # curl -k -u necadmin:1899KunihikoIwadare https://10.179.245.199/redfish/v1/Systems/WZP242312ZC/EthernetInterfaces/2.2

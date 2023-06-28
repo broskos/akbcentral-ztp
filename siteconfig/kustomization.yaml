@@ -4,7 +4,7 @@ kind: Kustomization
 
 generators:
   - m2lcwl.yaml
-  - akbcwl.yaml
+  #- akbcwl.yaml
 # the abobe and below are mutually exclusive, if you uncomment above you must comment
 # all of the lines below as they use the same servers
 #  - m2lcwl-3node.yaml
