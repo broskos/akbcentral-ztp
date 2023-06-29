@@ -87,7 +87,6 @@ spec:
                 state: up
                 ipv4:
                   enabled: false
-                  dhcp: false
                 link-aggregation:
                   mode: '802.3ad'
                   options:
@@ -118,7 +117,6 @@ spec:
                   id: 2035
                 ipv4:
                   enabled: true
-                  dhcp: false
                   address:
                   - ip: 10.179.255.67
                     prefix-length: 23
@@ -128,7 +126,6 @@ spec:
                 state: up
                 ipv4:
                   enabled: false
-                  dhcp: false
                 link-aggregation:
                   mode: '802.3ad'
                   options:
@@ -145,14 +142,12 @@ spec:
                 type: ethernet
                 ipv4:
                   enabled: false
-                  dhcp: false
               - name: ens4f0
                 state: up
                 mtu: 9000
                 type: ethernet
                 ipv4:
                   enabled: false
-                  dhcp: false
               - name: bond1.3019
                 state: up
                 type: vlan
@@ -207,7 +202,6 @@ spec:
                 state: up
                 ipv4:
                   enabled: false
-                  dhcp: false
                 link-aggregation:
                   mode: '802.3ad'
                   options:
@@ -238,7 +232,6 @@ spec:
                   id: 2035
                 ipv4:
                   enabled: true
-                  dhcp: false
                   address:
                   - ip: 10.179.255.68
                     prefix-length: 23
@@ -248,7 +241,6 @@ spec:
                 state: up
                 ipv4:
                   enabled: false
-                  dhcp: false
                 link-aggregation:
                   mode: '802.3ad'
                   options:
@@ -325,7 +317,6 @@ spec:
                 state: up
                 ipv4:
                   enabled: false
-                  dhcp: false
                 link-aggregation:
                   mode: '802.3ad'
                   options:
@@ -356,7 +347,6 @@ spec:
                   id: 2035
                 ipv4:
                   enabled: true
-                  dhcp: false
                   address:
                   - ip: 10.179.255.69
                     prefix-length: 23
@@ -366,7 +356,6 @@ spec:
                 state: up
                 ipv4:
                   enabled: false
-                  dhcp: false
                 link-aggregation:
                   mode: '802.3ad'
                   options:
@@ -443,7 +432,6 @@ spec:
       #           state: up
       #           ipv4:
       #             enabled: false
-      #             dhcp: false
       #           link-aggregation:
       #             mode: '802.3ad'
       #             options:
@@ -474,7 +462,6 @@ spec:
       #             id: 2035
       #           ipv4:
       #             enabled: true
-      #             dhcp: false
       #             address:
       #             - ip: 10.179.255.74
       #               prefix-length: 23
@@ -484,7 +471,6 @@ spec:
       #           state: up
       #           ipv4:
       #             enabled: false
-      #             dhcp: false
       #           link-aggregation:
       #             mode: '802.3ad'
       #             options:
@@ -561,7 +547,6 @@ spec:
       #           state: up
       #           ipv4:
       #             enabled: false
-      #             dhcp: false
       #           link-aggregation:
       #             mode: '802.3ad'
       #             options:
@@ -592,7 +577,6 @@ spec:
       #             id: 2035
       #           ipv4:
       #             enabled: true
-      #             dhcp: false
       #             address:
       #             - ip: 10.179.255.75
       #               prefix-length: 23
@@ -602,7 +586,6 @@ spec:
       #           state: up
       #           ipv4:
       #             enabled: false
-      #             dhcp: false
       #           link-aggregation:
       #             mode: '802.3ad'
       #             options:
@@ -633,7 +616,6 @@ spec:
       #             id: 3019
       #           ipv4:
       #             enabled: true
-      #             dhcp: false
       #             address:
       #             - ip: 172.16.46.75
       #               prefix-length: 22
