@@ -39,14 +39,14 @@ spec:
       metadata:
         labels:
           node-role.kubernetes.io/akbcwl-worker: ""
-        name: auh-akb02-nec-nfvi2-rk06-cisco-docpwrk01.etisalat-nfvi.local
+        name: auh-akb02-nec-nfvi2-rk06-cisco-docpwrk01
     - fileName: LABEL/LabelNodeRoleAkb.yaml
       policyName: "label-nodes"
       remediationAction: enforce
       metadata:
         labels:
           node-role.kubernetes.io/akbcwl-worker: ""
-        name: auh-akb02-nec-nfvi2-rk07-cisco-docpwrk02.etisalat-nfvi.local
+        name: auh-akb02-nec-nfvi2-rk07-cisco-docpwrk02
 
     - fileName: PAO/akbcwl-master.yaml
       policyName: "pao-profile"
