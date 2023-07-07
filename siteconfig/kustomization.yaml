@@ -3,7 +3,7 @@ kind: Kustomization
 #resources:
 
 generators:
-  - m2lcwl.yaml
+  #- m2lcwl.yaml
   - akbcwl.yaml
 # the abobe and below are mutually exclusive, if you uncomment above you must comment
 # all of the lines below as they use the same servers
