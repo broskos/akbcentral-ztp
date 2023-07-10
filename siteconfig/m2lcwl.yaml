@@ -174,7 +174,6 @@ spec:
       - hostName: "auh-m2l00-nec-nfvi2-rk04-cisco-docpmas02"
         role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk02-dell-sdn02.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
-        bmcAddress: "idrac-virtualmedia+https://10.179.228.14/redfish/v1/Systems/System.Embedded.1"
         bmcAddress: "redfish-virtualmedia+https://10.179.229.19/redfish/v1/Systems/WZP2423131V"
         bmcCredentialsName:
           name: "bmh-docpmas02-secret"
