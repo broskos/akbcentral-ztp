@@ -120,7 +120,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 10.179.233.68
+                  - ip: 10.179.233.72
                     prefix-length: 23
               - name: bond1
                 description: Bond1
@@ -159,7 +159,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 172.16.79.4
+                  - ip: 172.16.79.8
                     prefix-length: 22
             dns-resolver:
               config:
@@ -174,6 +174,7 @@ spec:
       - hostName: "auh-m2l00-nec-nfvi2-rk04-cisco-docpmas02"
         role: "master"
 #        bmcAddress: "idrac-virtualmedia+https://auh-m2l00-nec-nfvi2-rk02-dell-sdn02.sub04.localdomain/redfish/v1/Systems/System.Embedded.1"
+        bmcAddress: "idrac-virtualmedia+https://10.179.228.14/redfish/v1/Systems/System.Embedded.1"
         bmcAddress: "redfish-virtualmedia+https://10.179.229.19/redfish/v1/Systems/WZP2423131V"
         bmcCredentialsName:
           name: "bmh-docpmas02-secret"
@@ -235,7 +236,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 10.179.233.69
+                  - ip: 10.179.233.73
                     prefix-length: 23
               - name: bond1
                 description: Bond0
@@ -274,7 +275,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 172.16.79.5
+                  - ip: 172.16.79.9
                     prefix-length: 22
             dns-resolver:
               config:
@@ -351,7 +352,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 10.179.233.70
+                  - ip: 10.179.233.74
                     prefix-length: 23
               - name: bond1
                 description: Bond1
@@ -390,7 +391,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 172.16.79.6
+                  - ip: 172.16.79.10
                     prefix-length: 22
             dns-resolver:
               config:
